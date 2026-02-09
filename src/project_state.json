@@ -1,0 +1,203 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build a modern, premium, mobile-first website for the unisex salon brand “Baidees Salon” with luxury black/gold/white styling, multiple content pages (Home, Services, Gallery, About, Contact/Booking), and conversion-focused features like booking, CTAs, offers, membership, and FAQs.",
+  "architectural_notes": [
+    "Mobile-first, premium minimal aesthetic (luxurious but welcoming) using black/gold/white theme.",
+    "Typography pairing: elegant serif for headings, modern sans-serif for body copy.",
+    "UI styling: rounded cards, soft shadows, glassmorphism accents.",
+    "UX: smooth scroll animations and hover effects; include sticky navigation and footer with social links.",
+    "Conversion elements: prominent Book Appointment / Call Now CTAs and WhatsApp booking option."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Luxurious modern salon interior hero background, warm lighting, minimal black-and-gold accents (baidees-hero-salon.dim_2400x1200.png)\n- Set of square hairstyle result photos with consistent premium color grading (baidees-gallery-hairstyles-1.dim_1200x1200.png)\n- Set of square salon interior photos with consistent premium color grading (baidees-gallery-interior-1.dim_1200x1200.png)\n- Before/after pair image for haircut transformation, consistent lighting and framing (baidees-before-after-haircut.dim_2000x1000.png)\n- Before/after pair image for keratin/smoothening transformation, consistent lighting and framing (baidees-before-after-keratin.dim_2000x1000.png)\n- Two professional stylist portrait photos, clean studio-like background, premium look (baidees-stylist-1.dim_800x1000.png)\n- Two professional stylist portrait photos, clean studio-like background, premium look (baidees-stylist-2.dim_800x1000.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-mobile-first-multi-page-website-for-the-unisex-salon-brand-baidees-salon-with-these-routes-pages-home-services-gallery-about-us-and-contact-booking-ensure-navigation-allows-moving-between-all-pages",
+      "title": "Create a mobile-first, multi-page website for the unisex salon brand “Baidees Salon” with these routes/pages: Home, Services, Gallery, About Us, and Contact & Booking. Ensure navigation allows moving between all pages.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-global-design-system-across-all-pages-to-match-the-brand-vibe-luxurious-but-welcoming-stylish-clean-minimal-trustworthy-using-a-black-gold-white-palette-elegant-serif-headings-with-modern-sans-serif-body-text-rounded-cards-soft-shadows-and-subtle-glassmorphism-accents",
+      "title": "Implement the global design system across all pages to match the brand vibe (luxurious but welcoming, stylish, clean, minimal, trustworthy) using a black + gold + white palette, elegant serif headings with modern sans-serif body text, rounded cards, soft shadows, and subtle glassmorphism accents.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-sticky-navigation-bar-present-on-all-pages-with-links-to-home-services-gallery-about-and-contact-booking-and-include-prominent-ctas-book-appointment-call-now-where-appropriate-for-conversion",
+      "title": "Add a sticky navigation bar present on all pages with links to Home, Services, Gallery, About, and Contact/Booking, and include prominent CTAs (Book Appointment, Call Now) where appropriate for conversion.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-home-page-sections-1-full-width-hero-with-a-stylish-salon-interior-background-and-tagline-where-style-meets-confidence-2-short-intro-about-baidees-salon-3-highlight-service-cards-for-hair-cutting-styling-hair-spa-treatments-hair-keratin-smoothening-beard-grooming-facial-skin-care-4-before-after-gallery-slider-5-customer-testimonials-6-cta-buttons-book-appointment-and-call-now",
+      "title": "Build the Home page sections: (1) full-width hero with a stylish salon interior background and tagline “Where Style Meets Confidence”, (2) short intro about Baidees Salon, (3) highlight service cards for Hair Cutting & Styling, Hair Spa & Treatments, Hair Keratin & Smoothening, Beard Grooming, Facial & Skin Care, (4) before/after gallery slider, (5) customer testimonials, (6) CTA buttons: Book Appointment and Call Now.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-services-page-with-categorized-service-lists-and-pricing-placeholders-for-hair-services-haircut-men-women-kids-hair-styling-hair-coloring-beard-styling-hair-treatments-hair-spa-keratin-treatment-smoothening-rebonding-anti-dandruff-treatment-hair-fall-treatment-skin-grooming-facial-cleanup-detan-head-massage-each-service-must-include-a-short-benefits-description-and-a-duration",
+      "title": "Build the Services page with categorized service lists and pricing placeholders for: Hair Services (Haircut (Men/Women/Kids), Hair Styling, Hair Coloring, Beard Styling), Hair Treatments (Hair Spa, Keratin Treatment, Smoothening, Rebonding, Anti-Dandruff Treatment, Hair Fall Treatment), Skin & Grooming (Facial, Cleanup, Detan, Head Massage). Each service must include a short benefits description and a duration.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-gallery-page-with-1-a-grid-gallery-combining-hairstyle-results-and-salon-interior-images-2-a-before-after-comparison-section-and-3-an-instagram-style-layout-option-e-g-square-tiles-and-tight-grid-rhythm",
+      "title": "Build the Gallery page with (1) a grid gallery combining hairstyle results and salon interior images, (2) a before/after comparison section, and (3) an Instagram-style layout option (e.g., square tiles and tight grid rhythm).",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-about-us-page-including-story-of-baidees-salon-professional-stylists-introduction-hygiene-premium-product-assurance-and-a-why-choose-us-bullet-list",
+      "title": "Build the About Us page including: story of Baidees Salon, professional stylists introduction, hygiene & premium product assurance, and a “Why choose us” bullet list.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-contact-booking-page-including-an-online-appointment-booking-form-name-phone-service-date-time-a-whatsapp-booking-button-a-google-maps-location-placeholder-section-and-an-opening-hours-section",
+      "title": "Build the Contact & Booking page including: an online appointment booking form (name, phone, service, date, time), a WhatsApp booking button, a Google Maps location placeholder section, and an opening hours section.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-smooth-scroll-animations-and-hover-effects-throughout-the-ui-e-g-section-reveal-card-hover-lift-button-hover-transitions-while-keeping-performance-acceptable-on-mobile-devices",
+      "title": "Add smooth scroll animations and hover effects throughout the UI (e.g., section reveal, card hover lift, button hover transitions) while keeping performance acceptable on mobile devices.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-offer-banner-feature-e-g-flat-20-off-on-keratin-treatment-displayed-prominently-at-least-on-home-page-and-optionally-site-wide",
+      "title": "Add an offer banner feature (e.g., “Flat 20% off on Keratin Treatment”) displayed prominently (at least on Home page, and optionally site-wide).",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-membership-loyalty-card-section-describing-a-premium-membership-benefits-and-how-it-works-with-a-visually-distinct-card-style-layout-consistent-with-the-black-gold-white-theme",
+      "title": "Add a membership/loyalty card section describing a premium membership (benefits and how it works) with a visually distinct card-style layout consistent with the black/gold/white theme.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-faq-section-about-treatments-and-hair-care-with-at-least-6-q-a-items-using-an-accordion-interaction-pattern-suitable-for-mobile",
+      "title": "Add an FAQ section about treatments and hair care with at least 6 Q&A items, using an accordion interaction pattern suitable for mobile.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-a-site-wide-footer-with-social-media-links-placeholders-acceptable-contact-cues-and-consistent-branding-styling",
+      "title": "Create a site-wide footer with social media links (placeholders acceptable), contact cues, and consistent branding styling.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-required-static-image-assets-for-the-hero-gallery-before-after-examples-and-stylist-imagery-and-render-them-from-frontend-static-assets-not-via-backend",
+      "title": "Add required static image assets for the hero, gallery, before/after examples, and stylist imagery, and render them from frontend static assets (not via backend).",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create Home page with hero (tagline), intro, service highlight cards, before/after slider, testimonials, and Book/Call CTAs",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Create Services page with categorized service lists, pricing placeholders, benefits descriptions, and durations",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Create Gallery page with grid, before/after comparison section, and Instagram-style layout",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Create About Us page with brand story, stylist introductions, hygiene/product assurance, and 'Why choose us' bullets",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Create Contact & Booking page with appointment form, WhatsApp booking button, Google Maps placeholder, and opening hours",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Implement global design system: black+gold+white palette, serif headings + sans body, rounded cards, soft shadows, glassmorphism accents, smooth scroll animations/hover effects, mobile-first responsiveness",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Add sticky navigation bar and footer with social media links",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Add offer banner feature (e.g., Flat 20% off on Keratin Treatment)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "Add membership/loyalty card section",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-10",
+      "summary": "Add FAQ section about treatments and hair care",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Implement backend support for appointment submissions: store appointment records (name, phone, service, date, time, createdAt) and expose a canister method to create an appointment from the frontend. Validate required fields and return a confirmation (e.g., appointment id).",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Baidees Salon",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

@@ -1,0 +1,410 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Baidees Salon luxury multi-page website (frontend)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create a mobile-first multi-page site with routes for Home, Services, Gallery, About Us, and Contact & Booking, wired through global navigation.",
+      "acceptanceCriteria": [
+        "All 5 pages are accessible via the app navigation without dead links.",
+        "Routes render correctly on mobile and desktop viewports.",
+        "Page titles/headers and body copy are in English and match the provided sections."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the main app shell with client-side routing for Home, Services, Gallery, About Us, and Contact & Booking, and render a shared layout (navbar + footer) around routed pages."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "create",
+          "description": "Create the Home page view and ensure it is routed from the app router."
+        },
+        {
+          "path": "frontend/src/pages/ServicesPage.tsx",
+          "operation": "create",
+          "description": "Create the Services page view and ensure it is routed from the app router."
+        },
+        {
+          "path": "frontend/src/pages/GalleryPage.tsx",
+          "operation": "create",
+          "description": "Create the Gallery page view and ensure it is routed from the app router."
+        },
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
+          "operation": "create",
+          "description": "Create the About Us page view and ensure it is routed from the app router."
+        },
+        {
+          "path": "frontend/src/pages/ContactBookingPage.tsx",
+          "operation": "create",
+          "description": "Create the Contact & Booking page view and ensure it is routed from the app router."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement a consistent luxury design system (black/gold/white, serif headings + sans body, rounded cards, soft shadows, subtle glassmorphism) across all pages.",
+      "acceptanceCriteria": [
+        "All pages share a consistent palette, typography system, and component styling.",
+        "Cards and sections visibly use rounded corners, soft shadowing, and glass-like translucent accents where appropriate.",
+        "Contrast and readability are acceptable for body text on the chosen background colors."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Add global Tailwind layers and theme CSS variables to express the black + gold + white palette, default typography (serif headings, sans body), rounded corners, soft shadows, and glassmorphism utility classes (e.g., backdrop blur + translucent backgrounds)."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme tokens for the Baidees palette and typography (e.g., fontFamily for serif headings and sans body) and ensure consistent radius/shadow defaults for a premium look."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Wire brand typography (e.g., load an elegant serif and modern sans font via standard HTML includes) and keep the document title aligned with Baidees Salon."
+        },
+        {
+          "path": "frontend/src/components/layout/SiteLayout.tsx",
+          "operation": "create",
+          "description": "Create a shared layout wrapper that applies global spacing/background, and provides consistent section containers and glassmorphism surfaces for pages."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add a sticky, site-wide navbar with route links and prominent CTAs (Book Appointment, Call Now).",
+      "acceptanceCriteria": [
+        "Navbar remains visible while scrolling on mobile and desktop.",
+        "Navbar links navigate to the correct page/route.",
+        "Book Appointment and Call Now CTAs are discoverable on the site (at minimum on Home and/or Contact/Booking)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/layout/Navbar.tsx",
+          "operation": "create",
+          "description": "Create a sticky top navigation with links to Home, Services, Gallery, About, and Contact/Booking, plus CTA buttons for Book Appointment (navigates to Contact/Booking) and Call Now (tel: link). Use shadcn-ui components (e.g., Button) to ensure consistent styling. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire the Navbar into the shared layout so it appears on every route and remains sticky across all pages."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Build the Home page with hero, intro, highlighted service cards, before/after slider, testimonials, and CTAs.",
+      "acceptanceCriteria": [
+        "Hero renders full-width with the specified tagline.",
+        "Five service highlight cards render with the exact service names provided.",
+        "Before/after slider allows switching between at least 2 before/after examples.",
+        "Testimonials section displays at least 3 testimonials (placeholder content acceptable).",
+        "Book Appointment CTA navigates to the Contact & Booking page; Call Now CTA is a clickable tel: link."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Implement Home sections: full-width hero using the required hero background asset and tagline “Where Style Meets Confidence”, intro copy, 5 highlight service cards with the exact provided names, before/after slider with 2 examples, testimonials (≥3), and CTAs for Book Appointment (route) + Call Now (tel:). Use shadcn-ui components (e.g., Card, Button) for premium rounded surfaces and consistent interactions. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/media/BeforeAfterSlider.tsx",
+          "operation": "create",
+          "description": "Create an interactive before/after comparison component (slider or toggle) that can display at least two provided transformation examples and is reusable on Home and Gallery."
+        },
+        {
+          "path": "frontend/src/components/sections/TestimonialsSection.tsx",
+          "operation": "create",
+          "description": "Create a testimonials section component that renders at least 3 testimonials with luxury styling (rounded cards, subtle shadow, readable contrast). Use shadcn-ui Card where appropriate. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/sections/ServiceHighlightsSection.tsx",
+          "operation": "create",
+          "description": "Create a Home-only highlights section that renders the five named services as premium cards and links to the Services page. Use shadcn-ui components (Card/Button) for consistent styling. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Build the Services page with categorized services, each showing a price placeholder, benefits description, and duration.",
+      "acceptanceCriteria": [
+        "All categories and all listed services are present.",
+        "Each service row/card shows a price placeholder, a short benefits description, and a duration.",
+        "Layout is mobile-first with an easy-to-scan structure (cards or accordions acceptable)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ServicesPage.tsx",
+          "operation": "modify",
+          "description": "Implement categorized service lists for Hair Services, Hair Treatments, and Skin & Grooming with all required items, each showing a price placeholder, benefits, and duration. Use shadcn-ui components (e.g., Accordion for categories and Card for items) for mobile-friendly scanning. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/sections/ServicesCatalog.tsx",
+          "operation": "create",
+          "description": "Create a reusable catalog component that renders service categories and service items with benefits, duration, and price placeholder, optimized for mobile-first reading."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Build the Gallery page with a responsive grid, Instagram-style tile option, and an interactive before/after comparison section.",
+      "acceptanceCriteria": [
+        "Gallery shows a responsive grid of at least 9 images (placeholder images acceptable).",
+        "A before/after comparison section is present and interactive (slider or toggle).",
+        "Grid uses an Instagram-like tile layout on mobile (square tiles, consistent gutters)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/GalleryPage.tsx",
+          "operation": "modify",
+          "description": "Implement a responsive image grid (≥9 images) mixing hairstyle results and salon interior, with Instagram-style square tiles on mobile, and include a before/after comparison section using the shared before/after component."
+        },
+        {
+          "path": "frontend/src/components/media/GalleryGrid.tsx",
+          "operation": "create",
+          "description": "Create a gallery grid component that supports an Instagram-style tight square-tile layout with consistent gutters and responsive behavior."
+        },
+        {
+          "path": "frontend/src/components/media/BeforeAfterSlider.tsx",
+          "operation": "modify",
+          "description": "Ensure the before/after component supports usage on the Gallery page (e.g., multiple examples, accessible controls) without layout jank on mobile."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Build the About Us page with brand story, stylist introductions, hygiene & premium product assurance, and a Why choose us bullet list.",
+      "acceptanceCriteria": [
+        "Page includes all four requested sections with clear headings and readable copy.",
+        "Stylists section shows at least 2 stylist profiles (placeholder names/photos acceptable).",
+        "“Why choose us” is presented as a bullet list."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
+          "operation": "modify",
+          "description": "Implement About page sections: story, stylists (≥2 profiles with images), hygiene & premium product assurance, and a Why choose us bullet list, styled with the luxury theme. Use shadcn-ui Card for stylist profiles where appropriate. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/sections/StylistsSection.tsx",
+          "operation": "create",
+          "description": "Create a stylists section component rendering at least two stylist profile cards with local portrait assets and premium styling. Use shadcn-ui Card/Button if needed. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Build the Contact & Booking page with booking form, WhatsApp booking link, maps placeholder, and opening hours; submit form to backend booking capability and show success state.",
+      "acceptanceCriteria": [
+        "Form includes required fields: name, phone, service, date, time.",
+        "Submitting the form shows a success state and clears or resets the form.",
+        "WhatsApp booking button uses a wa.me or whatsapp:// link (with placeholder number if none provided).",
+        "A Maps placeholder block is shown (no real map integration required).",
+        "Opening hours are displayed in a clear list/table format."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ContactBookingPage.tsx",
+          "operation": "modify",
+          "description": "Implement booking form (name, phone, service, date, time) with validation, success state, and reset behavior; add WhatsApp booking button (wa.me/whatsapp:// with placeholder number), maps placeholder block, and opening hours list/table. Use shadcn-ui components (Input, Select, Button, Card, Alert) to keep styling consistent. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/hooks/useBookAppointment.ts",
+          "operation": "create",
+          "description": "Create a frontend hook that uses the existing actor hook to call the backend booking capability (bookAppointment) and returns loading/success/error state for the Contact & Booking form."
+        },
+        {
+          "path": "frontend/src/components/booking/BookingForm.tsx",
+          "operation": "create",
+          "description": "Create a reusable booking form component used by the Contact & Booking page, including field validation, submit handling via the booking hook, and a success confirmation panel. Use shadcn-ui form inputs/buttons for consistency. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Add smooth scroll reveal animations and hover/focus effects across UI while keeping mobile performance and reduced-motion accessibility in mind.",
+      "acceptanceCriteria": [
+        "Interactive elements (buttons, cards, nav links) have visible hover/focus states.",
+        "Scrolling through Home/Services/Gallery shows subtle entrance/reveal animations without jank on mobile.",
+        "Animations respect accessibility considerations (do not block interaction; prefer reduced motion where feasible)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useRevealOnScroll.ts",
+          "operation": "create",
+          "description": "Create a lightweight IntersectionObserver-based hook to apply entrance/reveal animations when sections enter the viewport, with prefers-reduced-motion support."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add global utility classes for subtle hover transitions (lift, glow, underline) and reveal animation styles, including reduced-motion variants to minimize motion when requested."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Apply reveal-on-scroll behavior to key sections (hero intro, highlights, before/after, testimonials, membership/FAQ if present) and ensure hover/focus states are visible and performant on mobile."
+        },
+        {
+          "path": "frontend/src/pages/ServicesPage.tsx",
+          "operation": "modify",
+          "description": "Apply subtle reveal animations to categories/sections and ensure service cards/accordion items have clear hover/focus styles."
+        },
+        {
+          "path": "frontend/src/pages/GalleryPage.tsx",
+          "operation": "modify",
+          "description": "Apply subtle reveal animations to the gallery grid and before/after section, avoiding heavy effects that could impact scrolling on mobile."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Add a prominent offer banner (e.g., “Flat 20% off on Keratin Treatment”) at least on the Home page.",
+      "acceptanceCriteria": [
+        "Offer banner is visible without requiring navigation to a hidden page.",
+        "Banner content matches the example offer text or uses a clearly marked placeholder offer in English.",
+        "Banner styling matches the luxury theme and remains readable on mobile."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/marketing/OfferBanner.tsx",
+          "operation": "create",
+          "description": "Create a premium-themed offer banner component (e.g., “Flat 20% off on Keratin Treatment”) with high readability on mobile. Use shadcn-ui components (e.g., Badge/Button) if helpful. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Render the OfferBanner prominently on the Home page (above the fold or near hero) and ensure it matches the black/gold/white theme."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Add a premium membership/loyalty card section with benefits and a clear call-to-action using a distinct card layout consistent with the theme.",
+      "acceptanceCriteria": [
+        "Membership section is present (Home or a dedicated section on another page is acceptable).",
+        "Section includes at least 3 benefits items and a clear call-to-action (e.g., “Ask at reception” or “Contact us” placeholder).",
+        "Membership content is presented using a card-like visual treatment (rounded, premium accents)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/marketing/MembershipCardSection.tsx",
+          "operation": "create",
+          "description": "Create a membership/loyalty section with a visually distinct premium card treatment (rounded, soft shadow, gold accents), at least 3 benefits, and a clear CTA. Use shadcn-ui Card/Button to maintain consistent styling. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Add the membership/loyalty card section to the Home page in an appropriate position (e.g., after services/testimonials) and ensure mobile-first layout."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Add a mobile-friendly FAQ accordion with at least 6 treatment/hair-care Q&A items.",
+      "acceptanceCriteria": [
+        "FAQ shows at least 6 questions with expandable answers.",
+        "Accordion interaction works via click/tap on mobile.",
+        "FAQ content is written in English and matches salon/treatment topics."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/sections/FaqAccordion.tsx",
+          "operation": "create",
+          "description": "Create an FAQ section using an accordion interaction pattern with at least 6 Q&A items about treatments/hair care. Use the shadcn-ui Accordion component for accessible accordion behavior. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/ServicesPage.tsx",
+          "operation": "modify",
+          "description": "Render the FAQ accordion on the Services page (or other appropriate existing page) and ensure it is easy to use on mobile."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Create a site-wide footer with social links, contact cues, and consistent branding.",
+      "acceptanceCriteria": [
+        "Footer appears on all pages.",
+        "Footer includes at least 3 social links (placeholders allowed).",
+        "Footer styling is consistent with the black/gold/white theme and remains readable on mobile."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/layout/Footer.tsx",
+          "operation": "create",
+          "description": "Create a site-wide footer with consistent branding styling, contact cues, and at least 3 social links (placeholders acceptable). Use shadcn-ui components (e.g., Button) where appropriate. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/layout/SiteLayout.tsx",
+          "operation": "modify",
+          "description": "Wire the Footer into the shared layout so it appears consistently on all pages/routes."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Add and render required static image assets from frontend/public/assets/generated for hero, gallery, before/after, and stylist imagery.",
+      "acceptanceCriteria": [
+        "All required images are committed as static assets under frontend/public/assets/generated.",
+        "UI components reference these local assets and render without broken links.",
+        "Gallery/hero/slider/stylist sections display the intended imagery on mobile and desktop."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/baidees-hero-salon.dim_2400x1200.png",
+          "operation": "create",
+          "description": "Add the generated hero background image asset to frontend static assets at the specified path."
+        },
+        {
+          "path": "frontend/public/assets/generated/baidees-gallery-hairstyles-1.dim_1200x1200.png",
+          "operation": "create",
+          "description": "Add the generated hairstyle gallery image asset to frontend static assets at the specified path."
+        },
+        {
+          "path": "frontend/public/assets/generated/baidees-gallery-interior-1.dim_1200x1200.png",
+          "operation": "create",
+          "description": "Add the generated interior gallery image asset to frontend static assets at the specified path."
+        },
+        {
+          "path": "frontend/public/assets/generated/baidees-before-after-haircut.dim_2000x1000.png",
+          "operation": "create",
+          "description": "Add the generated before/after haircut transformation image asset to frontend static assets at the specified path."
+        },
+        {
+          "path": "frontend/public/assets/generated/baidees-before-after-keratin.dim_2000x1000.png",
+          "operation": "create",
+          "description": "Add the generated before/after keratin/smoothening transformation image asset to frontend static assets at the specified path."
+        },
+        {
+          "path": "frontend/public/assets/generated/baidees-stylist-1.dim_800x1000.png",
+          "operation": "create",
+          "description": "Add the generated stylist portrait image asset #1 to frontend static assets at the specified path."
+        },
+        {
+          "path": "frontend/public/assets/generated/baidees-stylist-2.dim_800x1000.png",
+          "operation": "create",
+          "description": "Add the generated stylist portrait image asset #2 to frontend static assets at the specified path."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Reference and render the local hero and before/after assets (from frontend/public/assets/generated/baidees-hero-salon.dim_2400x1200.png, frontend/public/assets/generated/baidees-before-after-haircut.dim_2000x1000.png, frontend/public/assets/generated/baidees-before-after-keratin.dim_2000x1000.png) so they display without broken links."
+        },
+        {
+          "path": "frontend/src/pages/GalleryPage.tsx",
+          "operation": "modify",
+          "description": "Reference and render local gallery assets (from frontend/public/assets/generated/baidees-gallery-hairstyles-1.dim_1200x1200.png and frontend/public/assets/generated/baidees-gallery-interior-1.dim_1200x1200.png) to populate a grid of at least 9 images via repetition/variants without external URLs."
+        },
+        {
+          "path": "frontend/src/components/sections/StylistsSection.tsx",
+          "operation": "modify",
+          "description": "Reference and render local stylist portrait assets (frontend/public/assets/generated/baidees-stylist-1.dim_800x1000.png and frontend/public/assets/generated/baidees-stylist-2.dim_800x1000.png) for at least two stylist profiles."
+        }
+      ]
+    }
+  ]
+}

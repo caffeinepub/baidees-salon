@@ -1,0 +1,73 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-09T21:28:02.068Z",
+  "summary": "Diff adds a multi-page React app scaffold with TanStack Router, a sticky navbar + footer, marketing sections (offer banner, membership, testimonials, FAQ), gallery grid and before/after slider, and a booking form wired to a Motoko backend method. Key gap: backend appointment storage is not in stable state, and backend includes unrequested “car wash” service catalog + extra query APIs.",
+  "missing_requirements": [
+    {
+      "id": "REQ-9",
+      "requirement": "Store appointment records in stable state for the canister lifetime and return a confirmation value (appointment id).",
+      "reason": "Backend stores appointments in an in-memory Map and nextId var without any stable variables or upgrade hooks shown; this will not persist across upgrades and may not meet the stable-state requirement.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Backend includes an unrelated default services list (Standard Wash, Premium Wash, Interior Cleaning) that does not match salon services.",
+      "reason": "BuildRequest does not ask for a backend services catalog, and the included services are for vehicle washing rather than salon offerings.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Backend exposes extra query endpoints getServices, getAppointment, and getAllAppointments.",
+      "reason": "REQ-9 only requires a create-appointment method callable from the frontend; additional listing/query APIs were not requested.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Frontend includes next-themes ThemeProvider and a UI toast system (sonner) wired in App.",
+      "reason": "The BuildRequest does not request theme switching or toast infrastructure explicitly (though it may be used to show success states).",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.72,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/booking/BookingForm.tsx",
+    "frontend/src/components/layout/Footer.tsx",
+    "frontend/src/components/layout/Navbar.tsx",
+    "frontend/src/components/layout/SiteLayout.tsx",
+    "frontend/src/components/marketing/MembershipCardSection.tsx",
+    "frontend/src/components/marketing/OfferBanner.tsx",
+    "frontend/src/components/media/BeforeAfterSlider.tsx",
+    "frontend/src/components/media/GalleryGrid.tsx",
+    "frontend/src/components/sections/FaqAccordion.tsx",
+    "frontend/src/components/sections/ServiceHighlightsSection.tsx",
+    "frontend/src/components/sections/StylistsSection.tsx",
+    "frontend/src/components/sections/TestimonialsSection.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useBookAppointment.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useRevealOnScroll.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/AboutPage.tsx",
+    "frontend/src/pages/ContactBookingPage.tsx",
+    "frontend/src/pages/GalleryPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/ServicesPage.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}
