@@ -1,6 +1,6 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 5,
+  "projectStateVersion": 7,
   "summary": "Build a modern, premium, mobile-first website for the unisex salon brand “Baidees Salon” with luxury black/gold/white styling, multiple content pages (Home, Services, Gallery, About, Contact/Booking), and conversion-focused features like booking, CTAs, offers, membership, and FAQs.",
   "architectural_notes": [
     "Mobile-first, premium minimal aesthetic (luxurious but welcoming) using black/gold/white theme.",
@@ -9,11 +9,11 @@
     "UX: smooth scroll animations and hover effects; include sticky navigation and footer with social links.",
     "Conversion elements: prominent Book Appointment / Call Now CTAs and WhatsApp booking option.",
     "Update brand accent color to yellow (replace any orangish accents) consistently across UI components and highlights.",
-    "Use the provided logo consistently in key brand touchpoints (navbar, footer; consider favicon/metadata if available)."
+    "Use the provided logo consistently in key brand touchpoints (navbar, footer; consider favicon/metadata if available).",
+    "Contact info update: set primary phone number to +91 77357 05356 and remove address display/section wherever it appears."
   ],
   "known_issues": [],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Square transparent-background logo export (baidees-logo.dim_1024x1024.png)\n- Horizontal transparent-background logo export (baidees-logo-horizontal.dim_1600x600.png)\n- Favicon 32x32 (favicon.dim_32x32.png)\n- Favicon 180x180 (apple-touch-icon.dim_180x180.png)\n- Open Graph preview image (og-image.dim_1200x630.png)\n\n## Edit Images\n- Crop/clean and export logo variants (images.png > baidees-logo.dim_1024x1024.png)\n- Crop/clean and export horizontal logo variant (images.png > baidees-logo-horizontal.dim_1600x600.png)\n- Generate favicon from the logo (images.png > favicon.dim_32x32.png)\n- Generate Apple touch icon from the logo (images.png > apple-touch-icon.dim_180x180.png)\n- Generate OG image from the logo (images.png > og-image.dim_1200x630.png)",
   "existing_features": [
     {
       "id": "feature-create-a-mobile-first-multi-page-website-for-the-unisex-salon-brand-baidees-salon-with-these-routes-pages-home-services-gallery-about-us-and-contact-booking-ensure-navigation-allows-moving-between-all-pages",
@@ -142,6 +142,22 @@
         "REQ-17"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-update-the-site-wide-phone-number-to-91-77357-05356-wherever-it-is-displayed-and-wherever-click-to-call-whatsapp-links-are-used-navbar-ctas-home-hero-cta-contact-booking-page-contact-card-footer-contact-info-and-any-other-occurrences-ensure-phone-links-use-a-valid-dial-whatsapp-format-e-g-tel-917735705356-and-https-wa-me-917735705356",
+      "title": "Update the site-wide phone number to “+91 77357 05356” wherever it is displayed and wherever click-to-call/WhatsApp links are used (Navbar CTAs, Home hero CTA, Contact/Booking page contact card, Footer contact info, and any other occurrences). Ensure phone links use a valid dial/WhatsApp format (e.g., tel:+917735705356 and https://wa.me/917735705356).",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-remove-the-salon-address-from-the-website-ui-wherever-it-appears-e-g-footer-contact-info-contact-booking-page-address-block-and-any-map-placeholder-captions-that-include-an-address-do-not-show-any-address-label-value-after-this-change",
+      "title": "Remove the salon address from the website UI wherever it appears (e.g., Footer contact info, Contact/Booking page address block, and any map placeholder captions that include an address). Do not show any address label/value after this change.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -222,6 +238,12 @@
     {
       "id": "AR-21",
       "summary": "Integrate and use the provided Baidees Salon logo consistently across the site (e.g., navbar, footer, favicon/OG where applicable)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-22",
+      "summary": "Update site contact details: change phone number to +91 77357 05356 and remove address from the website (e.g., Contact section/footer as applicable)",
       "reqIds": [],
       "status": "pending"
     }

@@ -1,80 +1,58 @@
 {
   "kind": "build_request",
-  "title": "Switch accent theme from orange to yellow and apply provided logo site-wide",
+  "title": "Update contact phone number and remove address from site",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-16",
-      "text": "Update the global accent color theme from the current orangish/gold accent to a cleaner, brighter yellow accent across the entire UI while keeping the premium black/white base styling. This must apply consistently to existing accent usage (e.g., `text-gold`, `bg-gold`, `border-gold`, focus rings, hover states, glows, badges/banners, CTAs) on all pages and shared components.",
+      "id": "REQ-18",
+      "text": "Update the site-wide phone number to “+91 77357 05356” wherever it is displayed and wherever click-to-call/WhatsApp links are used (Navbar CTAs, Home hero CTA, Contact/Booking page contact card, Footer contact info, and any other occurrences). Ensure phone links use a valid dial/WhatsApp format (e.g., tel:+917735705356 and https://wa.me/917735705356).",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "recent-messages"
         ],
         "quotes": [
-          "Change the orangish theme to yellow"
+          "Change the phone number to +91 77357 05356, and remove adress"
         ]
       },
       "acceptanceCriteria": [
-        "All existing UI elements that currently use the gold/orange accent now render with a distinctly yellow accent (not orange) across Home, Services, Gallery, About, Contact/Booking, Navbar, Footer, Offer banner, buttons, links, and focus styles.",
-        "No regression in contrast/readability: yellow accent remains legible on dark backgrounds; primary text remains white/foreground as before.",
-        "Implementation is centralized via existing design tokens (CSS variables/Tailwind theme) so the change does not require per-component hardcoded color updates except where unavoidable."
+        "All user-visible phone text shows exactly “+91 77357 05356”.",
+        "All click-to-call links use tel:+917735705356.",
+        "WhatsApp booking button/link uses https://wa.me/917735705356 (with the existing prefilled message preserved).",
+        "No remaining instances of the old placeholder number (+1 (234) 567-890 / +1234567890 / 1234567890) exist in the frontend code or rendered UI."
       ]
     },
     {
-      "id": "REQ-17",
-      "text": "Add the user-provided Baidees Salon logo as a static asset and use it wherever possible across the site: at minimum in the Navbar brand area and Footer brand area, and also set it as the site favicon (and an OG/social preview image if present/used). Ensure sizing works on mobile and desktop and preserves the luxury styling (clean spacing, no pixelation).",
+      "id": "REQ-19",
+      "text": "Remove the salon address from the website UI wherever it appears (e.g., Footer contact info, Contact/Booking page address block, and any map placeholder captions that include an address). Do not show any address label/value after this change.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-4"
+          "recent-messages"
         ],
         "quotes": [
-          "also use this logo wherever possible"
+          "Change the phone number to +91 77357 05356, and remove adress"
         ]
       },
       "acceptanceCriteria": [
-        "Navbar brand area displays the provided logo (with appropriate sizing) and links to the Home route.",
-        "Footer brand area includes the provided logo (with appropriate sizing) without breaking the existing layout.",
-        "`frontend/index.html` includes favicon link(s) pointing to the new logo-derived favicon asset(s).",
-        "Logo assets are loaded from frontend static assets (not from the backend) and render sharply on common device pixel ratios."
+        "The Footer no longer displays an “Address:” line.",
+        "The Contact/Booking page no longer displays an address section/label/value.",
+        "Any text referencing a specific street address (e.g., “123 Style Street…”) is removed from the UI.",
+        "The Contact/Booking page still renders correctly without layout breakage after removing address content."
       ]
     }
   ],
   "constraints": [
-    "Do not modify files under `frontend/src/components/ui` or any paths listed as immutable in SYSTEM_CONTEXT.",
-    "Keep backend unchanged; this request is UI/theme/asset-only.",
-    "Use the provided uploaded logo as the source of truth; do not invent a different logo mark or text treatment."
+    "Do not modify files under frontend/src/components/ui (shadcn components) or other frontend immutable paths listed in SYSTEM_CONTEXT.",
+    "Backend (Motoko) logic and state schema must remain unchanged for this request."
   ],
   "nonGoals": [
-    "Changing copywriting/content on pages beyond what is necessary to place the logo.",
-    "Adding new pages or new booking/business features.",
-    "Reworking the site layout or navigation structure beyond integrating the logo into existing header/footer."
+    "Changing the email address or opening hours.",
+    "Adding or integrating a real Google Maps embed or geolocation features.",
+    "Changing the booking form fields or backend appointment validation."
   ],
   "imageRequirements": {
-    "required": [
-      "Square transparent-background logo export (baidees-logo.dim_1024x1024.png)",
-      "Horizontal transparent-background logo export (baidees-logo-horizontal.dim_1600x600.png)",
-      "Favicon 32x32 (favicon.dim_32x32.png)",
-      "Favicon 180x180 (apple-touch-icon.dim_180x180.png)",
-      "Open Graph preview image (og-image.dim_1200x630.png)"
-    ],
-    "edits": [
-      "Crop/clean and export logo variants (images.png > baidees-logo.dim_1024x1024.png)",
-      "Crop/clean and export horizontal logo variant (images.png > baidees-logo-horizontal.dim_1600x600.png)",
-      "Generate favicon from the logo (images.png > favicon.dim_32x32.png)",
-      "Generate Apple touch icon from the logo (images.png > apple-touch-icon.dim_180x180.png)",
-      "Generate OG image from the logo (images.png > og-image.dim_1200x630.png)"
-    ]
-  },
-  "userProfileUpdate": {
-    "goalsToAdd": [],
-    "goalsToRemove": [],
-    "preferencesToAdd": [],
-    "preferencesToRemove": [],
-    "miscToAdd": [],
-    "miscToRemove": [],
-    "fieldsToSet": {},
-    "fieldsToDelete": []
+    "required": [],
+    "edits": []
   }
 }

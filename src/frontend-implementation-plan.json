@@ -1,83 +1,64 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "Yellow accent theme + site-wide Baidees logo integration",
+  "title": "Update site-wide phone number and remove address from UI",
   "requirements": [
     {
-      "id": "REQ-16",
-      "summary": "Centralize and switch the global accent from orange/gold to a cleaner bright yellow across tokens, utilities, and Tailwind theme usage.",
+      "id": "REQ-18",
+      "summary": "Update all displayed phone numbers and call/WhatsApp links to use +91 77357 05356 with valid tel/wa.me formats across the site.",
       "acceptanceCriteria": [
-        "All existing UI elements that currently use the gold/orange accent now render with a distinctly yellow accent (not orange) across Home, Services, Gallery, About, Contact/Booking, Navbar, Footer, Offer banner, buttons, links, and focus styles.",
-        "No regression in contrast/readability: yellow accent remains legible on dark backgrounds; primary text remains white/foreground as before.",
-        "Implementation is centralized via existing design tokens (CSS variables/Tailwind theme) so the change does not require per-component hardcoded color updates except where unavoidable."
+        "All user-visible phone text shows exactly “+91 77357 05356”.",
+        "All click-to-call links use tel:+917735705356.",
+        "WhatsApp booking button/link uses https://wa.me/917735705356 (with the existing prefilled message preserved).",
+        "No remaining instances of the old placeholder number (+1 (234) 567-890 / +1234567890 / 1234567890) exist in the frontend code or rendered UI."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Update the global design tokens for accent usage by changing the underlying --gold and --ring OKLCH values to a brighter yellow hue and ensuring utility classes (text-gold/bg-gold/border-gold) continue to map to the centralized token (no per-component hardcoding)."
-        },
-        {
-          "path": "frontend/tailwind.config.js",
-          "operation": "modify",
-          "description": "Adjust Tailwind theme extensions so accent styling remains consistent with the new yellow token (e.g., update any gold-themed shadows/glows to match the new yellow accent and keep ring/border/foreground mappings intact)."
-        }
-      ]
-    },
-    {
-      "id": "REQ-17",
-      "summary": "Add the provided Baidees Salon logo assets and wire them into Navbar, Footer, favicon, and social/OG metadata for sharp rendering across devices.",
-      "acceptanceCriteria": [
-        "Navbar brand area displays the provided logo (with appropriate sizing) and links to the Home route.",
-        "Footer brand area includes the provided logo (with appropriate sizing) without breaking the existing layout.",
-        "`frontend/index.html` includes favicon link(s) pointing to the new logo-derived favicon asset(s).",
-        "Logo assets are loaded from frontend static assets (not from the backend) and render sharply on common device pixel ratios."
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/public/assets/generated/baidees-logo.dim_1024x1024.png",
+          "path": "frontend/src/config/contact.ts",
           "operation": "create",
-          "description": "Add the generated square transparent logo asset at frontend/public/assets/generated/baidees-logo.dim_1024x1024.png for reuse across brand placements."
-        },
-        {
-          "path": "frontend/public/assets/generated/baidees-logo-horizontal.dim_1600x600.png",
-          "operation": "create",
-          "description": "Add the generated horizontal transparent logo asset at frontend/public/assets/generated/baidees-logo-horizontal.dim_1600x600.png for header/footer brand usage."
-        },
-        {
-          "path": "frontend/public/assets/generated/favicon.dim_32x32.png",
-          "operation": "create",
-          "description": "Add the generated favicon asset at frontend/public/assets/generated/favicon.dim_32x32.png for browser tab/favicon usage."
-        },
-        {
-          "path": "frontend/public/assets/generated/apple-touch-icon.dim_180x180.png",
-          "operation": "create",
-          "description": "Add the generated Apple touch icon at frontend/public/assets/generated/apple-touch-icon.dim_180x180.png for iOS home screen usage."
-        },
-        {
-          "path": "frontend/public/assets/generated/og-image.dim_1200x630.png",
-          "operation": "create",
-          "description": "Add the generated Open Graph preview image at frontend/public/assets/generated/og-image.dim_1200x630.png for social sharing previews."
-        },
-        {
-          "path": "frontend/index.html",
-          "operation": "modify",
-          "description": "Wire static metadata to the new assets: add/replace favicon and apple-touch-icon link tags referencing frontend/public/assets/generated/favicon.dim_32x32.png and frontend/public/assets/generated/apple-touch-icon.dim_180x180.png, and add/replace OG image meta tags (and any existing social preview image wiring) referencing frontend/public/assets/generated/og-image.dim_1200x630.png."
-        },
-        {
-          "path": "frontend/src/components/branding/BrandLogo.tsx",
-          "operation": "create",
-          "description": "Create a small reusable BrandLogo component that renders the provided logo assets from frontend static files with responsive sizing (mobile/desktop) and preserves clean luxury spacing; use horizontal logo where appropriate and fall back to square when needed."
+          "description": "Create a single source of truth for contact details (display phone text, tel: link value, WhatsApp wa.me link base, and the existing WhatsApp prefilled message) so all pages/sections can reuse consistent formatting."
         },
         {
           "path": "frontend/src/components/layout/Navbar.tsx",
           "operation": "modify",
-          "description": "Replace the text-based brand in the Navbar with the new BrandLogo component in the brand area, ensuring it links to the Home route and scales appropriately for mobile and desktop without pixelation."
+          "description": "Replace placeholder tel links in desktop and mobile CTAs with values imported from frontend/src/config/contact.ts so the Call Now button uses tel:+917735705356 and no old phone values remain."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Update the hero Call Now CTA to use the phone values from frontend/src/config/contact.ts (tel:+917735705356) and remove any remaining placeholder phone link value."
+        },
+        {
+          "path": "frontend/src/pages/ContactBookingPage.tsx",
+          "operation": "modify",
+          "description": "Update (1) the WhatsApp booking button to use https://wa.me/917735705356 while preserving the current prefilled message querystring, and (2) the Phone contact card to display exactly “+91 77357 05356” with href tel:+917735705356; source values from frontend/src/config/contact.ts."
         },
         {
           "path": "frontend/src/components/layout/Footer.tsx",
           "operation": "modify",
-          "description": "Integrate the BrandLogo component into the Footer brand area (replacing or pairing with existing text as needed) while preserving layout, spacing, and readability across breakpoints."
+          "description": "Update the footer phone line to display exactly “+91 77357 05356” and (if linked) ensure it uses tel:+917735705356; source values from frontend/src/config/contact.ts, and remove any placeholder phone text."
+        }
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "summary": "Remove all salon address UI content (including labels and map placeholder address text) without breaking layout.",
+      "acceptanceCriteria": [
+        "The Footer no longer displays an “Address:” line.",
+        "The Contact/Booking page no longer displays an address section/label/value.",
+        "Any text referencing a specific street address (e.g., “123 Style Street…”) is removed from the UI.",
+        "The Contact/Booking page still renders correctly without layout breakage after removing address content."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/layout/Footer.tsx",
+          "operation": "modify",
+          "description": "Remove the address list item/line entirely from the footer contact info so no “Address:” label/value is rendered."
+        },
+        {
+          "path": "frontend/src/pages/ContactBookingPage.tsx",
+          "operation": "modify",
+          "description": "Remove the Address block from the Contact Information card (icon/label/value) and remove the map placeholder caption line that references a street address (e.g., “Visit us at 123 Style Street”); ensure spacing/layout remains visually consistent after removal."
         }
       ]
     }

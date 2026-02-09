@@ -1,29 +1,48 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-09T22:20:38.573Z",
-  "summary": "REQ-16 appears implemented via centralized design tokens (CSS variables/Tailwind) by shifting the gold accent token to a brighter yellow and updating ring color. REQ-17 is largely implemented via a new BrandLogo component used in Navbar/Footer and favicon/OG links added to frontend/index.html, but the diff summary does not show the actual image assets being added.",
+  "generatedAt": "2026-02-09T22:37:11.393Z",
+  "summary": "Diff implements a centralized contact config and updates visible phone/tel/WhatsApp usage in Navbar, Home hero CTA, Footer, and (partially shown) Contact/Booking page. Address appears removed from Footer and described as removed from Contact/Booking page, but the diff is truncated and doesn’t provide enough evidence to confirm all site-wide occurrences and acceptance criteria (especially “no remaining old numbers” and “prefilled WhatsApp message preserved”).",
   "missing_requirements": [
     {
-      "id": "REQ-17",
-      "requirement": "Add the user-provided Baidees Salon logo as a static asset (square + horizontal) and generate/favicon/apple-touch/og images from it, loaded from frontend static assets.",
-      "reason": "Code references image paths under /assets/generated, and index.html links to favicon/apple-touch/og images, but the diff summary does not show any image/static asset files being added to the frontend. Without the actual assets present, the requirement is not fully verifiable from this diff.",
+      "id": "REQ-18",
+      "requirement": "Ensure the WhatsApp booking button/link uses https://wa.me/917735705356 with the existing prefilled message preserved.",
+      "reason": "The WhatsApp base URL matches, but the diff introduces a new default message string; without the prior message (or a note that it was preserved), the acceptance criterion about preserving the existing prefilled message can’t be verified from the provided diff summary.",
       "evidence": [
-        "frontend/src/components/branding/BrandLogo.tsx",
-        "frontend/index.html"
+        "frontend/src/config/contact.ts",
+        "frontend/src/pages/ContactBookingPage.tsx"
+      ]
+    },
+    {
+      "id": "REQ-18",
+      "requirement": "Update the phone number everywhere it is displayed/linked and ensure no remaining instances of old placeholder numbers exist in the frontend code or rendered UI.",
+      "reason": "Some key locations are updated (Navbar, HomePage hero CTA, Footer, Contact/Booking page), but the diff is truncated and does not provide evidence of a repo-wide cleanup/search to guarantee there are no remaining old placeholder numbers or other phone occurrences elsewhere.",
+      "evidence": [
+        "frontend/src/components/layout/Navbar.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/components/layout/Footer.tsx",
+        "frontend/src/pages/ContactBookingPage.tsx"
+      ]
+    },
+    {
+      "id": "REQ-19",
+      "requirement": "Remove the salon address from the website UI wherever it appears (including any map placeholder captions that include an address).",
+      "reason": "Footer no longer shows an address line, and the Contact/Booking page is described as address-removed, but the Contact/Booking file is truncated and no other pages/components are shown; cannot confirm removal from all other potential UI occurrences (e.g., any map placeholder/caption elsewhere).",
+      "evidence": [
+        "frontend/src/components/layout/Footer.tsx",
+        "frontend/src/pages/ContactBookingPage.tsx"
       ]
     }
   ],
   "hallucinated_features": [],
-  "confidence": 0.7,
+  "confidence": 0.62,
   "changed_files": [
     "frontend-file-summaries.txt",
-    "frontend/index.html",
-    "frontend/src/components/branding/BrandLogo.tsx",
     "frontend/src/components/layout/Footer.tsx",
     "frontend/src/components/layout/Navbar.tsx",
-    "frontend/src/index.css",
-    "frontend/tailwind.config.js",
+    "frontend/src/config/contact.ts",
+    "frontend/src/pages/ContactBookingPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
     "project_state.json"
   ]
 }

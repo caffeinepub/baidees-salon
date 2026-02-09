@@ -1,7 +1,7 @@
 {
   "kind": "coverage_report",
   "version": "1.0",
-  "generatedAt": "2026-02-09T22:20:38.576Z",
+  "generatedAt": "2026-02-09T22:37:11.396Z",
   "sources": {
     "buildRequest": true,
     "implementationPlan": true
@@ -11,64 +11,49 @@
     "implemented": 2,
     "items": [
       {
-        "id": "REQ-16",
-        "summary": "Update the global accent color theme from the current orangish/gold accent to a cleaner, brighter yellow accent across the entire UI while keeping the premium black/white base styling. This must apply consistently to existing accent usage (e.g., `text-gold`, `bg-gold`, `border-gold`, focus rings, hover states, glows, badges/banners, CTAs) on all pages and shared components.",
+        "id": "REQ-18",
+        "summary": "Update the site-wide phone number to “+91 77357 05356” wherever it is displayed and wherever click-to-call/WhatsApp links are used (Navbar CTAs, Home hero CTA, Contact/Booking page contact card, Footer contact info, and any other occurrences). Ensure phone links use a valid dial/WhatsApp format (e.g., tel:+917735705356 and https://wa.me/917735705356).",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/src/index.css",
-          "frontend/tailwind.config.js"
+          "frontend/src/config/contact.ts",
+          "frontend/src/components/layout/Navbar.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/ContactBookingPage.tsx",
+          "frontend/src/components/layout/Footer.tsx"
         ],
         "matchedFiles": [
-          "frontend/src/index.css",
-          "frontend/tailwind.config.js"
+          "frontend/src/config/contact.ts",
+          "frontend/src/components/layout/Navbar.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/ContactBookingPage.tsx",
+          "frontend/src/components/layout/Footer.tsx"
         ]
       },
       {
-        "id": "REQ-17",
-        "summary": "Add the user-provided Baidees Salon logo as a static asset and use it wherever possible across the site: at minimum in the Navbar brand area and Footer brand area, and also set it as the site favicon (and an OG/social preview image if present/used). Ensure sizing works on mobile and desktop and preserves the luxury styling (clean spacing, no pixelation).",
+        "id": "REQ-19",
+        "summary": "Remove the salon address from the website UI wherever it appears (e.g., Footer contact info, Contact/Booking page address block, and any map placeholder captions that include an address). Do not show any address label/value after this change.",
         "status": "implemented",
         "plannedFiles": [
-          "frontend/public/assets/generated/baidees-logo.dim_1024x1024.png",
-          "frontend/public/assets/generated/baidees-logo-horizontal.dim_1600x600.png",
-          "frontend/public/assets/generated/favicon.dim_32x32.png",
-          "frontend/public/assets/generated/apple-touch-icon.dim_180x180.png",
-          "frontend/public/assets/generated/og-image.dim_1200x630.png",
-          "frontend/index.html",
-          "frontend/src/components/branding/BrandLogo.tsx",
-          "frontend/src/components/layout/Navbar.tsx",
-          "frontend/src/components/layout/Footer.tsx"
+          "frontend/src/components/layout/Footer.tsx",
+          "frontend/src/pages/ContactBookingPage.tsx"
         ],
         "matchedFiles": [
-          "frontend/public/assets/generated/baidees-logo.dim_1024x1024.png",
-          "frontend/public/assets/generated/baidees-logo-horizontal.dim_1600x600.png",
-          "frontend/public/assets/generated/favicon.dim_32x32.png",
-          "frontend/public/assets/generated/apple-touch-icon.dim_180x180.png",
-          "frontend/public/assets/generated/og-image.dim_1200x630.png",
-          "frontend/index.html",
-          "frontend/src/components/branding/BrandLogo.tsx",
-          "frontend/src/components/layout/Navbar.tsx",
-          "frontend/src/components/layout/Footer.tsx"
+          "frontend/src/components/layout/Footer.tsx",
+          "frontend/src/pages/ContactBookingPage.tsx"
         ]
       }
     ]
   },
   "changedFiles": [
     "build-request.json",
-    "build-template/README.md",
     "feature_evidence.json",
     "frontend-file-summaries.txt",
     "frontend-implementation-plan.json",
-    "frontend/index.html",
-    "frontend/public/assets/generated/apple-touch-icon.dim_180x180.png",
-    "frontend/public/assets/generated/baidees-logo-horizontal.dim_1600x600.png",
-    "frontend/public/assets/generated/baidees-logo.dim_1024x1024.png",
-    "frontend/public/assets/generated/favicon.dim_32x32.png",
-    "frontend/public/assets/generated/og-image.dim_1200x630.png",
-    "frontend/src/components/branding/BrandLogo.tsx",
     "frontend/src/components/layout/Footer.tsx",
     "frontend/src/components/layout/Navbar.tsx",
-    "frontend/src/index.css",
-    "frontend/tailwind.config.js",
+    "frontend/src/config/contact.ts",
+    "frontend/src/pages/ContactBookingPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
     "project_state.json",
     "scratch/component-selection.json",
     "spec.md",

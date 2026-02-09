@@ -1,6 +1,7 @@
 import { SiFacebook, SiInstagram, SiX } from 'react-icons/si';
 import { Heart } from 'lucide-react';
 import BrandLogo from '@/components/branding/BrandLogo';
+import { CONTACT_INFO } from '@/config/contact';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -85,15 +86,22 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Contact Us</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li>Phone: +1 (234) 567-890</li>
-              <li>Email: info@baideessalon.com</li>
-              <li>Address: 123 Style Street, Fashion District</li>
+              <li>
+                Phone:{' '}
+                <a
+                  href={`tel:${CONTACT_INFO.phone.tel}`}
+                  className="hover:text-gold transition-colors"
+                >
+                  {CONTACT_INFO.phone.display}
+                </a>
+              </li>
+              <li>Email: {CONTACT_INFO.email}</li>
               <li className="pt-2">
                 <strong className="text-foreground">Hours:</strong>
                 <br />
-                Mon-Sat: 9:00 AM - 8:00 PM
+                {CONTACT_INFO.hours.weekdays}
                 <br />
-                Sunday: 10:00 AM - 6:00 PM
+                {CONTACT_INFO.hours.weekend}
               </li>
             </ul>
           </div>

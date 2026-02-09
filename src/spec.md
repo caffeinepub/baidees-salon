@@ -1,11 +1,11 @@
 # Specification
 
 ## Summary
-**Goal:** Update the site’s accent theme from orange/gold to a cleaner bright yellow, and apply the provided Baidees Salon logo site-wide (including favicon/preview assets) while keeping the premium black/white base styling.
+**Goal:** Update the site-wide phone number to “+91 77357 05356” and remove any displayed salon address across the website.
 
 **Planned changes:**
-- Centralize and update the global accent color tokens so all existing accent usages (text/background/border, focus rings, hover states, glows, badges/banners, CTAs) render as distinctly yellow across all pages and shared components.
-- Add the provided logo as frontend static assets and integrate it into the Navbar and Footer brand areas with responsive sizing and preserved layout.
-- Generate and wire up logo-derived favicon assets (and OG/social preview image where used) via frontend static assets and `frontend/index.html` metadata/links.
+- Replace all visible phone number text with exactly “+91 77357 05356” across the Navbar CTAs, Home hero CTA, Contact/Booking page contact card, Footer contact info, and any other occurrences.
+- Update all phone-related links to use valid formats: `tel:+917735705356` for click-to-call and `https://wa.me/917735705356` for WhatsApp (preserving any existing prefilled message).
+- Remove the salon address UI wherever it appears (e.g., Footer address line, Contact/Booking address section, and any address/map placeholder captions), ensuring the Contact/Booking page layout remains intact.
 
-**User-visible outcome:** The website consistently uses a bright yellow accent (not orange) across the UI, and the Baidees Salon logo appears in the header/footer and browser/tab icons (and social preview where applicable) with crisp rendering on mobile and desktop.
+**User-visible outcome:** Visitors see the updated phone number everywhere, can tap to call or open WhatsApp using the correct links, and no longer see any address displayed on the site.

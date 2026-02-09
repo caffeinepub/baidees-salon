@@ -1,13 +1,13 @@
 {
   "frontend/src/App.tsx": "Main application component with TanStack Router setup for all five pages (Home, Services, Gallery, About, Contact) wrapped in ThemeProvider and including Toaster for notifications.",
   "frontend/src/components/layout/SiteLayout.tsx": "Root layout component that wraps all pages with the sticky Navbar and Footer, providing consistent structure across the application.",
-  "frontend/src/components/layout/Navbar.tsx": "Sticky navigation bar with mobile-responsive menu, route links, BrandLogo component in brand area, and prominent CTAs (Book Appointment, Call Now) styled with yellow accents.",
-  "frontend/src/components/layout/Footer.tsx": "Site-wide footer with BrandLogo component, quick links, contact details, social media icons, and Caffeine.ai attribution with dynamic year and UTM tracking.",
-  "frontend/src/pages/HomePage.tsx": "Home page featuring hero section with tagline, intro, service highlights, before/after slider, testimonials, offer banner, and membership section with scroll reveal animations.",
+  "frontend/src/components/layout/Navbar.tsx": "Sticky navigation bar with mobile-responsive menu, route links, BrandLogo component, and CTAs (Book Appointment, Call Now) using contact info from centralized config.",
+  "frontend/src/components/layout/Footer.tsx": "Site-wide footer with BrandLogo, quick links, contact details (phone and email only, address removed), social media icons, and Caffeine.ai attribution with dynamic year and UTM tracking.",
+  "frontend/src/pages/HomePage.tsx": "Home page featuring hero section with tagline, intro, service highlights, before/after slider, testimonials, offer banner, and membership section with scroll reveal animations and updated phone number from config.",
   "frontend/src/pages/ServicesPage.tsx": "Services page displaying categorized accordion of all salon services with pricing, duration, benefits, and FAQ section at the bottom.",
   "frontend/src/pages/GalleryPage.tsx": "Gallery page with Instagram-style responsive grid of salon images and interactive before/after transformation section.",
   "frontend/src/pages/AboutPage.tsx": "About page featuring brand story, expert stylist profiles with images, hygiene/premium product assurance, and \"Why choose us\" benefits cards.",
-  "frontend/src/pages/ContactBookingPage.tsx": "Contact and booking page with appointment form, WhatsApp booking button, opening hours, contact information, and map placeholder.",
+  "frontend/src/pages/ContactBookingPage.tsx": "Contact and booking page with appointment form, WhatsApp booking button, opening hours, and contact information (phone and email only, address section removed) using centralized contact config.",
   "frontend/src/components/booking/BookingForm.tsx": "Reusable booking form component with validation, service selection, date/time pickers, backend integration, and success state display.",
   "frontend/src/components/sections/ServiceHighlightsSection.tsx": "Home page section displaying five key service categories as premium cards with icons and navigation to full services page.",
   "frontend/src/components/sections/TestimonialsSection.tsx": "Testimonials section showing three client reviews with ratings, names, and services in elegant cards.",
@@ -22,5 +22,6 @@
   "frontend/src/index.css": "Global styles with OKLCH color system defining black/yellow/white luxury theme (changed from gold/orange to bright yellow at hue 95), serif/sans typography, and utility classes for hover effects and animations.",
   "frontend/tailwind.config.js": "Tailwind configuration extending theme with Playfair Display serif and Inter sans fonts, yellow color tokens (updated gold-glow shadow to yellow), custom shadows, and animation keyframes.",
   "frontend/index.html": "HTML entry point with Baidees Salon title, meta description, favicon links, Apple touch icon, Open Graph social preview image, and Google Fonts preload for Playfair Display and Inter typefaces.",
-  "frontend/src/components/branding/BrandLogo.tsx": "Reusable brand logo component that renders the Baidees logo from static assets with responsive sizing (sm/md/lg) and variant support (horizontal/square) for use across the application."
+  "frontend/src/components/branding/BrandLogo.tsx": "Reusable brand logo component that renders the Baidees logo from static assets with responsive sizing (sm/md/lg) and variant support (horizontal/square) for use across the application.",
+  "frontend/src/config/contact.ts": "Centralized contact configuration file containing phone number (display and tel formats), WhatsApp details, email, and opening hours as single source of truth for all contact information across the site."
 }

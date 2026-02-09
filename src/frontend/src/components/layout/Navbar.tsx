@@ -3,6 +3,7 @@ import { Link, useNavigate } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Phone } from 'lucide-react';
 import BrandLogo from '@/components/branding/BrandLogo';
+import { CONTACT_INFO } from '@/config/contact';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +47,7 @@ export default function Navbar() {
               className="border-gold text-gold hover:bg-gold hover:text-black"
               asChild
             >
-              <a href="tel:+1234567890">
+              <a href={`tel:${CONTACT_INFO.phone.tel}`}>
                 <Phone className="mr-2 h-4 w-4" />
                 Call Now
               </a>
@@ -91,7 +92,7 @@ export default function Navbar() {
                 className="border-gold text-gold hover:bg-gold hover:text-black w-full"
                 asChild
               >
-                <a href="tel:+1234567890">
+                <a href={`tel:${CONTACT_INFO.phone.tel}`}>
                   <Phone className="mr-2 h-4 w-4" />
                   Call Now
                 </a>

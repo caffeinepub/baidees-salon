@@ -1,9 +1,10 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { MapPin, Clock, Phone, Mail } from 'lucide-react';
+import { Clock, Phone, Mail } from 'lucide-react';
 import { SiWhatsapp } from 'react-icons/si';
 import { Button } from '@/components/ui/button';
 import BookingForm from '../components/booking/BookingForm';
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
+import { CONTACT_INFO } from '@/config/contact';
 
 export default function ContactBookingPage() {
   const { ref: headerRef, isVisible: headerVisible } = useRevealOnScroll();
@@ -12,6 +13,8 @@ export default function ContactBookingPage() {
     { day: 'Monday - Saturday', hours: '9:00 AM - 8:00 PM' },
     { day: 'Sunday', hours: '10:00 AM - 6:00 PM' },
   ];
+
+  const whatsappUrl = `${CONTACT_INFO.whatsapp.baseUrl}?text=${encodeURIComponent(CONTACT_INFO.whatsapp.defaultMessage)}`;
 
   return (
     <div className="w-full py-16 md:py-24">
@@ -57,7 +60,7 @@ export default function ContactBookingPage() {
                   asChild
                 >
                   <a
-                    href="https://wa.me/1234567890?text=Hi%2C%20I%20would%20like%20to%20book%20an%20appointment"
+                    href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -99,10 +102,10 @@ export default function ContactBookingPage() {
                   <div>
                     <p className="font-medium">Phone</p>
                     <a
-                      href="tel:+1234567890"
+                      href={`tel:${CONTACT_INFO.phone.tel}`}
                       className="text-muted-foreground hover:text-gold transition-colors"
                     >
-                      +1 (234) 567-890
+                      {CONTACT_INFO.phone.display}
                     </a>
                   </div>
                 </div>
@@ -111,22 +114,11 @@ export default function ContactBookingPage() {
                   <div>
                     <p className="font-medium">Email</p>
                     <a
-                      href="mailto:info@baideessalon.com"
+                      href={`mailto:${CONTACT_INFO.email}`}
                       className="text-muted-foreground hover:text-gold transition-colors"
                     >
-                      info@baideessalon.com
+                      {CONTACT_INFO.email}
                     </a>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <MapPin className="h-5 w-5 text-gold mt-0.5" />
-                  <div>
-                    <p className="font-medium">Address</p>
-                    <p className="text-muted-foreground">
-                      123 Style Street, Fashion District
-                      <br />
-                      City, State 12345
-                    </p>
                   </div>
                 </div>
               </CardContent>
@@ -134,21 +126,11 @@ export default function ContactBookingPage() {
 
             {/* Map Placeholder */}
             <Card className="border-border/40 bg-card/50 backdrop-blur">
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <MapPin className="h-5 w-5 text-gold" />
-                  Location
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
+              <CardContent className="p-0">
                 <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
-                  <div className="text-center">
-                    <MapPin className="h-12 w-12 text-gold mx-auto mb-2" />
-                    <p className="text-muted-foreground">Map location placeholder</p>
-                    <p className="text-sm text-muted-foreground mt-1">
-                      Visit us at 123 Style Street
-                    </p>
-                  </div>
+                  <p className="text-muted-foreground text-center px-4">
+                    Map location coming soon
+                  </p>
                 </div>
               </CardContent>
             </Card>

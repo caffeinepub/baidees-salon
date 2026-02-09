@@ -8,6 +8,7 @@ import ServiceHighlightsSection from '../components/sections/ServiceHighlightsSe
 import OfferBanner from '../components/marketing/OfferBanner';
 import MembershipCardSection from '../components/marketing/MembershipCardSection';
 import { useRevealOnScroll } from '../hooks/useRevealOnScroll';
+import { CONTACT_INFO } from '@/config/contact';
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -57,7 +58,7 @@ export default function HomePage() {
               className="border-gold text-gold hover:bg-gold hover:text-black text-lg px-8"
               asChild
             >
-              <a href="tel:+1234567890">
+              <a href={`tel:${CONTACT_INFO.phone.tel}`}>
                 <Phone className="mr-2 h-5 w-5" />
                 Call Now
               </a>
