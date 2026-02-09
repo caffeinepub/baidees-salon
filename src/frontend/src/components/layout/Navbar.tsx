@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useNavigate } from '@tanstack/react-router';
 import { Button } from '@/components/ui/button';
 import { Menu, X, Phone } from 'lucide-react';
+import BrandLogo from '@/components/branding/BrandLogo';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,9 +20,8 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2">
-            <span className="font-serif text-2xl font-bold text-gold">Baidees</span>
-            <span className="font-serif text-2xl font-light">Salon</span>
+          <Link to="/" className="flex items-center">
+            <BrandLogo variant="horizontal" size="md" />
           </Link>
 
           {/* Desktop Navigation */}

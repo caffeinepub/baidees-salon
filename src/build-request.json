@@ -1,312 +1,71 @@
 {
   "kind": "build_request",
-  "title": "Baidees Salon premium multi-page website with booking, services, gallery, and luxury styling",
+  "title": "Switch accent theme from orange to yellow and apply provided logo site-wide",
   "priority": "normal",
   "requirements": [
     {
-      "id": "REQ-1",
-      "text": "Create a mobile-first, multi-page website for the unisex salon brand “Baidees Salon” with these routes/pages: Home, Services, Gallery, About Us, and Contact & Booking. Ensure navigation allows moving between all pages.",
+      "id": "REQ-16",
+      "text": "Update the global accent color theme from the current orangish/gold accent to a cleaner, brighter yellow accent across the entire UI while keeping the premium black/white base styling. This must apply consistently to existing accent usage (e.g., `text-gold`, `bg-gold`, `border-gold`, focus rings, hover states, glows, badges/banners, CTAs) on all pages and shared components.",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-2"
+          "msg-4"
         ],
         "quotes": [
-          "Create a modern, premium, mobile-first website for a unisex salon brand named “Baidees Salon”.",
-          "Pages & Sections\n\n1. Home Page ...\n\n2. Services Page ...\n\n3. Gallery Page ...\n\n4. About Us ...\n\n5. Contact & Booking ..."
+          "Change the orangish theme to yellow"
         ]
       },
       "acceptanceCriteria": [
-        "All 5 pages are accessible via the app navigation without dead links.",
-        "Routes render correctly on mobile and desktop viewports.",
-        "Page titles/headers and body copy are in English and match the provided sections."
+        "All existing UI elements that currently use the gold/orange accent now render with a distinctly yellow accent (not orange) across Home, Services, Gallery, About, Contact/Booking, Navbar, Footer, Offer banner, buttons, links, and focus styles.",
+        "No regression in contrast/readability: yellow accent remains legible on dark backgrounds; primary text remains white/foreground as before.",
+        "Implementation is centralized via existing design tokens (CSS variables/Tailwind theme) so the change does not require per-component hardcoded color updates except where unavoidable."
       ]
     },
     {
-      "id": "REQ-2",
-      "text": "Implement the global design system across all pages to match the brand vibe (luxurious but welcoming, stylish, clean, minimal, trustworthy) using a black + gold + white palette, elegant serif headings with modern sans-serif body text, rounded cards, soft shadows, and subtle glassmorphism accents.",
+      "id": "REQ-17",
+      "text": "Add the user-provided Baidees Salon logo as a static asset and use it wherever possible across the site: at minimum in the Navbar brand area and Footer brand area, and also set it as the site favicon (and an OG/social preview image if present/used). Ensure sizing works on mobile and desktop and preserves the luxury styling (clean spacing, no pixelation).",
       "target": "frontend",
       "source": {
         "messageIds": [
-          "msg-2"
+          "msg-4"
         ],
         "quotes": [
-          "Brand vibe: luxurious but welcoming, stylish, clean, minimal, trustworthy.",
-          "Design Requirements\n\nColor palette: black + gold + white luxury theme\n\nElegant serif headings + modern sans-serif body font\n\nRounded cards, soft shadows, glassmorphism accents"
+          "also use this logo wherever possible"
         ]
       },
       "acceptanceCriteria": [
-        "All pages share a consistent palette, typography system, and component styling.",
-        "Cards and sections visibly use rounded corners, soft shadowing, and glass-like translucent accents where appropriate.",
-        "Contrast and readability are acceptable for body text on the chosen background colors."
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "text": "Add a sticky navigation bar present on all pages with links to Home, Services, Gallery, About, and Contact/Booking, and include prominent CTAs (Book Appointment, Call Now) where appropriate for conversion.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "Sticky navigation bar",
-          "CTA buttons: Book Appointment and Call Now"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Navbar remains visible while scrolling on mobile and desktop.",
-        "Navbar links navigate to the correct page/route.",
-        "Book Appointment and Call Now CTAs are discoverable on the site (at minimum on Home and/or Contact/Booking)."
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "text": "Build the Home page sections: (1) full-width hero with a stylish salon interior background and tagline “Where Style Meets Confidence”, (2) short intro about Baidees Salon, (3) highlight service cards for Hair Cutting & Styling, Hair Spa & Treatments, Hair Keratin & Smoothening, Beard Grooming, Facial & Skin Care, (4) before/after gallery slider, (5) customer testimonials, (6) CTA buttons: Book Appointment and Call Now.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "1. Home Page\n\nFull-width hero section with a stylish salon interior background\n\nTagline: “Where Style Meets Confidence”\n\nShort intro about Baidees Salon\n\nHighlight services cards:\n\nHair Cutting & Styling\n\nHair Spa & Treatments\n\nHair Keratin & Smoothening\n\nBeard Grooming\n\nFacial & Skin Care\n\n\nBefore/After gallery slider\n\nCustomer testimonials\n\nCTA buttons: Book Appointment and Call Now"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Hero renders full-width with the specified tagline.",
-        "Five service highlight cards render with the exact service names provided.",
-        "Before/after slider allows switching between at least 2 before/after examples.",
-        "Testimonials section displays at least 3 testimonials (placeholder content acceptable).",
-        "Book Appointment CTA navigates to the Contact & Booking page; Call Now CTA is a clickable tel: link."
-      ]
-    },
-    {
-      "id": "REQ-5",
-      "text": "Build the Services page with categorized service lists and pricing placeholders for: Hair Services (Haircut (Men/Women/Kids), Hair Styling, Hair Coloring, Beard Styling), Hair Treatments (Hair Spa, Keratin Treatment, Smoothening, Rebonding, Anti-Dandruff Treatment, Hair Fall Treatment), Skin & Grooming (Facial, Cleanup, Detan, Head Massage). Each service must include a short benefits description and a duration.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "2. Services Page\n\nCreate categorized service lists with pricing placeholders:\n\nHair Services\n\nHaircut (Men/Women/Kids)\n\nHair Styling\n\nHair Coloring\n\nBeard Styling\n\n\nHair Treatments\n\nHair Spa\n\nKeratin Treatment\n\nSmoothening\n\nRebonding\n\nAnti-Dandruff Treatment\n\nHair Fall Treatment\n\n\nSkin & Grooming\n\nFacial\n\nCleanup\n\nDetan\n\nHead Massage\n\n\nEach service should have short benefits description and duration."
-        ]
-      },
-      "acceptanceCriteria": [
-        "All categories and all listed services are present.",
-        "Each service row/card shows a price placeholder, a short benefits description, and a duration.",
-        "Layout is mobile-first with an easy-to-scan structure (cards or accordions acceptable)."
-      ]
-    },
-    {
-      "id": "REQ-6",
-      "text": "Build the Gallery page with (1) a grid gallery combining hairstyle results and salon interior images, (2) a before/after comparison section, and (3) an Instagram-style layout option (e.g., square tiles and tight grid rhythm).",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "3. Gallery Page\n\nGrid gallery of hairstyle results and salon interior\n\nBefore/after comparison section\n\nInstagram-style layout"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Gallery shows a responsive grid of at least 9 images (placeholder images acceptable).",
-        "A before/after comparison section is present and interactive (slider or toggle).",
-        "Grid uses an Instagram-like tile layout on mobile (square tiles, consistent gutters)."
-      ]
-    },
-    {
-      "id": "REQ-7",
-      "text": "Build the About Us page including: story of Baidees Salon, professional stylists introduction, hygiene & premium product assurance, and a “Why choose us” bullet list.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "4. About Us\n\nStory of Baidees Salon\n\nProfessional stylists introduction\n\nHygiene & premium product assurance\n\nWhy choose us (bullet points)"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Page includes all four requested sections with clear headings and readable copy.",
-        "Stylists section shows at least 2 stylist profiles (placeholder names/photos acceptable).",
-        "“Why choose us” is presented as a bullet list."
-      ]
-    },
-    {
-      "id": "REQ-8",
-      "text": "Build the Contact & Booking page including: an online appointment booking form (name, phone, service, date, time), a WhatsApp booking button, a Google Maps location placeholder section, and an opening hours section.",
-      "target": "both",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "5. Contact & Booking\n\nOnline appointment booking form (name, phone, service, date, time)\n\nWhatsApp booking button\n\nGoogle Maps location placeholder\n\nOpening hours section"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Form includes required fields: name, phone, service, date, time.",
-        "Submitting the form shows a success state and clears or resets the form.",
-        "WhatsApp booking button uses a wa.me or whatsapp:// link (with placeholder number if none provided).",
-        "A Maps placeholder block is shown (no real map integration required).",
-        "Opening hours are displayed in a clear list/table format."
-      ]
-    },
-    {
-      "id": "REQ-9",
-      "text": "Implement backend support for appointment submissions: store appointment records (name, phone, service, date, time, createdAt) and expose a canister method to create an appointment from the frontend. Validate required fields and return a confirmation (e.g., appointment id).",
-      "target": "backend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "Online appointment booking form (name, phone, service, date, time)"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Backend provides a create-appointment method callable from the frontend actor.",
-        "Required field validation rejects missing/empty name, phone, service, date, or time.",
-        "Successful submissions are stored in stable state for the canister lifetime and return a confirmation value."
-      ]
-    },
-    {
-      "id": "REQ-10",
-      "text": "Add smooth scroll animations and hover effects throughout the UI (e.g., section reveal, card hover lift, button hover transitions) while keeping performance acceptable on mobile devices.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "Smooth scroll animations and hover effects",
-          "Mobile responsive first"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Interactive elements (buttons, cards, nav links) have visible hover/focus states.",
-        "Scrolling through Home/Services/Gallery shows subtle entrance/reveal animations without jank on mobile.",
-        "Animations respect accessibility considerations (do not block interaction; prefer reduced motion where feasible)."
-      ]
-    },
-    {
-      "id": "REQ-11",
-      "text": "Add an offer banner feature (e.g., “Flat 20% off on Keratin Treatment”) displayed prominently (at least on Home page, and optionally site-wide).",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "Offer banner (e.g., “Flat 20% off on Keratin Treatment”)"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Offer banner is visible without requiring navigation to a hidden page.",
-        "Banner content matches the example offer text or uses a clearly marked placeholder offer in English.",
-        "Banner styling matches the luxury theme and remains readable on mobile."
-      ]
-    },
-    {
-      "id": "REQ-12",
-      "text": "Add a membership/loyalty card section describing a premium membership (benefits and how it works) with a visually distinct card-style layout consistent with the black/gold/white theme.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "Membership/loyalty card section"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Membership section is present (Home or a dedicated section on another page is acceptable).",
-        "Section includes at least 3 benefits items and a clear call-to-action (e.g., “Ask at reception” or “Contact us” placeholder).",
-        "Membership content is presented using a card-like visual treatment (rounded, premium accents)."
-      ]
-    },
-    {
-      "id": "REQ-13",
-      "text": "Add an FAQ section about treatments and hair care with at least 6 Q&A items, using an accordion interaction pattern suitable for mobile.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "FAQ section about treatments and hair care"
-        ]
-      },
-      "acceptanceCriteria": [
-        "FAQ shows at least 6 questions with expandable answers.",
-        "Accordion interaction works via click/tap on mobile.",
-        "FAQ content is written in English and matches salon/treatment topics."
-      ]
-    },
-    {
-      "id": "REQ-14",
-      "text": "Create a site-wide footer with social media links (placeholders acceptable), contact cues, and consistent branding styling.",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "Footer with social media links"
-        ]
-      },
-      "acceptanceCriteria": [
-        "Footer appears on all pages.",
-        "Footer includes at least 3 social links (placeholders allowed).",
-        "Footer styling is consistent with the black/gold/white theme and remains readable on mobile."
-      ]
-    },
-    {
-      "id": "REQ-15",
-      "text": "Add required static image assets for the hero, gallery, before/after examples, and stylist imagery, and render them from frontend static assets (not via backend).",
-      "target": "frontend",
-      "source": {
-        "messageIds": [
-          "msg-2"
-        ],
-        "quotes": [
-          "Full-width hero section with a stylish salon interior background",
-          "Grid gallery of hairstyle results and salon interior",
-          "Before/After gallery slider",
-          "Professional stylists introduction"
-        ]
-      },
-      "acceptanceCriteria": [
-        "All required images are committed as static assets under frontend/public/assets/generated.",
-        "UI components reference these local assets and render without broken links.",
-        "Gallery/hero/slider/stylist sections display the intended imagery on mobile and desktop."
+        "Navbar brand area displays the provided logo (with appropriate sizing) and links to the Home route.",
+        "Footer brand area includes the provided logo (with appropriate sizing) without breaking the existing layout.",
+        "`frontend/index.html` includes favicon link(s) pointing to the new logo-derived favicon asset(s).",
+        "Logo assets are loaded from frontend static assets (not from the backend) and render sharply on common device pixel ratios."
       ]
     }
   ],
   "constraints": [
-    "Do not edit files under frontend/src/components/ui (compose these components instead).",
-    "Do not edit immutable hook/bootstrap files: frontend/src/hooks/useInternetIdentity.ts, frontend/src/hooks/useInternetIdentity.tsx, frontend/src/hooks/useActor.ts, frontend/src/main.tsx.",
-    "Backend must remain a single Motoko actor (all logic in backend/main.mo); only add migration.mo if an upgrade requires it."
+    "Do not modify files under `frontend/src/components/ui` or any paths listed as immutable in SYSTEM_CONTEXT.",
+    "Keep backend unchanged; this request is UI/theme/asset-only.",
+    "Use the provided uploaded logo as the source of truth; do not invent a different logo mark or text treatment."
   ],
   "nonGoals": [
-    "Do not integrate real Google Maps (use a placeholder section only).",
-    "Do not integrate Instagram APIs or live social feeds (static gallery layout only).",
-    "Do not implement third-party authentication providers (Internet Identity only, if authentication is needed later).",
-    "Do not implement payments or e-commerce features."
+    "Changing copywriting/content on pages beyond what is necessary to place the logo.",
+    "Adding new pages or new booking/business features.",
+    "Reworking the site layout or navigation structure beyond integrating the logo into existing header/footer."
   ],
   "imageRequirements": {
     "required": [
-      "Luxurious modern salon interior hero background, warm lighting, minimal black-and-gold accents (baidees-hero-salon.dim_2400x1200.png)",
-      "Set of square hairstyle result photos with consistent premium color grading (baidees-gallery-hairstyles-1.dim_1200x1200.png)",
-      "Set of square salon interior photos with consistent premium color grading (baidees-gallery-interior-1.dim_1200x1200.png)",
-      "Before/after pair image for haircut transformation, consistent lighting and framing (baidees-before-after-haircut.dim_2000x1000.png)",
-      "Before/after pair image for keratin/smoothening transformation, consistent lighting and framing (baidees-before-after-keratin.dim_2000x1000.png)",
-      "Two professional stylist portrait photos, clean studio-like background, premium look (baidees-stylist-1.dim_800x1000.png)",
-      "Two professional stylist portrait photos, clean studio-like background, premium look (baidees-stylist-2.dim_800x1000.png)"
+      "Square transparent-background logo export (baidees-logo.dim_1024x1024.png)",
+      "Horizontal transparent-background logo export (baidees-logo-horizontal.dim_1600x600.png)",
+      "Favicon 32x32 (favicon.dim_32x32.png)",
+      "Favicon 180x180 (apple-touch-icon.dim_180x180.png)",
+      "Open Graph preview image (og-image.dim_1200x630.png)"
     ],
-    "edits": []
+    "edits": [
+      "Crop/clean and export logo variants (images.png > baidees-logo.dim_1024x1024.png)",
+      "Crop/clean and export horizontal logo variant (images.png > baidees-logo-horizontal.dim_1600x600.png)",
+      "Generate favicon from the logo (images.png > favicon.dim_32x32.png)",
+      "Generate Apple touch icon from the logo (images.png > apple-touch-icon.dim_180x180.png)",
+      "Generate OG image from the logo (images.png > og-image.dim_1200x630.png)"
+    ]
   },
   "userProfileUpdate": {
     "goalsToAdd": [],

@@ -2,34 +2,9 @@
   "kind": "feature_evidence_report",
   "features": [
     {
-      "featureId": "feature-create-a-mobile-first-multi-page-website-for-the-unisex-salon-brand-baidees-salon-with-these-routes-pages-home-services-gallery-about-us-and-contact-booking-ensure-navigation-allows-moving-between-all-pages",
-      "featureTitle": "Create a mobile-first, multi-page website for the unisex salon brand “Baidees Salon” with these routes/pages: Home, Services, Gallery, About Us, and Contact & Booking. Ensure navigation allows moving between all pages.",
+      "featureId": "feature-update-the-global-accent-color-theme-from-the-current-orangish-gold-accent-to-a-cleaner-brighter-yellow-accent-across-the-entire-ui-while-keeping-the-premium-black-white-base-styling-this-must-apply-consistently-to-existing-accent-usage-e-g-text-gold-bg-gold-border-gold-focus-rings-hover-states-glows-badges-banners-ctas-on-all-pages-and-shared-components",
+      "featureTitle": "Update the global accent color theme from the current orangish/gold accent to a cleaner, brighter yellow accent across the entire UI while keeping the premium black/white base styling. This must apply consistently to existing accent usage (e.g., `text-gold`, `bg-gold`, `border-gold`, focus rings, hover states, glows, badges/banners, CTAs) on all pages and shared components.",
       "files": [
-        "frontend/src/App.tsx",
-        "frontend/src/pages/AboutPage.tsx",
-        "frontend/src/pages/ContactBookingPage.tsx",
-        "frontend/src/pages/GalleryPage.tsx",
-        "frontend/src/pages/HomePage.tsx",
-        "frontend/src/pages/ServicesPage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-1"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-implement-the-global-design-system-across-all-pages-to-match-the-brand-vibe-luxurious-but-welcoming-stylish-clean-minimal-trustworthy-using-a-black-gold-white-palette-elegant-serif-headings-with-modern-sans-serif-body-text-rounded-cards-soft-shadows-and-subtle-glassmorphism-accents",
-      "featureTitle": "Implement the global design system across all pages to match the brand vibe (luxurious but welcoming, stylish, clean, minimal, trustworthy) using a black + gold + white palette, elegant serif headings with modern sans-serif body text, rounded cards, soft shadows, and subtle glassmorphism accents.",
-      "files": [
-        "frontend/index.html",
-        "frontend/src/components/layout/SiteLayout.tsx",
         "frontend/src/index.css",
         "frontend/tailwind.config.js"
       ],
@@ -41,15 +16,17 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-2"
+        "REQ-16"
       ],
       "confidence": "high"
     },
     {
-      "featureId": "feature-add-a-sticky-navigation-bar-present-on-all-pages-with-links-to-home-services-gallery-about-and-contact-booking-and-include-prominent-ctas-book-appointment-call-now-where-appropriate-for-conversion",
-      "featureTitle": "Add a sticky navigation bar present on all pages with links to Home, Services, Gallery, About, and Contact/Booking, and include prominent CTAs (Book Appointment, Call Now) where appropriate for conversion.",
+      "featureId": "feature-add-the-user-provided-baidees-salon-logo-as-a-static-asset-and-use-it-wherever-possible-across-the-site-at-minimum-in-the-navbar-brand-area-and-footer-brand-area-and-also-set-it-as-the-site-favicon-and-an-og-social-preview-image-if-present-used-ensure-sizing-works-on-mobile-and-desktop-and-preserves-the-luxury-styling-clean-spacing-no-pixelation",
+      "featureTitle": "Add the user-provided Baidees Salon logo as a static asset and use it wherever possible across the site: at minimum in the Navbar brand area and Footer brand area, and also set it as the site favicon (and an OG/social preview image if present/used). Ensure sizing works on mobile and desktop and preserves the luxury styling (clean spacing, no pixelation).",
       "files": [
-        "frontend/src/App.tsx",
+        "frontend/index.html",
+        "frontend/src/components/branding/BrandLogo.tsx",
+        "frontend/src/components/layout/Footer.tsx",
         "frontend/src/components/layout/Navbar.tsx"
       ],
       "components": [
@@ -60,223 +37,7 @@
         "github-export-icp-cli@1.0.0"
       ],
       "testIds": [
-        "REQ-3"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-build-the-home-page-sections-1-full-width-hero-with-a-stylish-salon-interior-background-and-tagline-where-style-meets-confidence-2-short-intro-about-baidees-salon-3-highlight-service-cards-for-hair-cutting-styling-hair-spa-treatments-hair-keratin-smoothening-beard-grooming-facial-skin-care-4-before-after-gallery-slider-5-customer-testimonials-6-cta-buttons-book-appointment-and-call-now",
-      "featureTitle": "Build the Home page sections: (1) full-width hero with a stylish salon interior background and tagline “Where Style Meets Confidence”, (2) short intro about Baidees Salon, (3) highlight service cards for Hair Cutting & Styling, Hair Spa & Treatments, Hair Keratin & Smoothening, Beard Grooming, Facial & Skin Care, (4) before/after gallery slider, (5) customer testimonials, (6) CTA buttons: Book Appointment and Call Now.",
-      "files": [
-        "frontend/src/components/media/BeforeAfterSlider.tsx",
-        "frontend/src/components/sections/ServiceHighlightsSection.tsx",
-        "frontend/src/components/sections/TestimonialsSection.tsx",
-        "frontend/src/pages/HomePage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-4"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-build-the-services-page-with-categorized-service-lists-and-pricing-placeholders-for-hair-services-haircut-men-women-kids-hair-styling-hair-coloring-beard-styling-hair-treatments-hair-spa-keratin-treatment-smoothening-rebonding-anti-dandruff-treatment-hair-fall-treatment-skin-grooming-facial-cleanup-detan-head-massage-each-service-must-include-a-short-benefits-description-and-a-duration",
-      "featureTitle": "Build the Services page with categorized service lists and pricing placeholders for: Hair Services (Haircut (Men/Women/Kids), Hair Styling, Hair Coloring, Beard Styling), Hair Treatments (Hair Spa, Keratin Treatment, Smoothening, Rebonding, Anti-Dandruff Treatment, Hair Fall Treatment), Skin & Grooming (Facial, Cleanup, Detan, Head Massage). Each service must include a short benefits description and a duration.",
-      "files": [
-        "frontend/src/pages/ServicesPage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-5"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-build-the-gallery-page-with-1-a-grid-gallery-combining-hairstyle-results-and-salon-interior-images-2-a-before-after-comparison-section-and-3-an-instagram-style-layout-option-e-g-square-tiles-and-tight-grid-rhythm",
-      "featureTitle": "Build the Gallery page with (1) a grid gallery combining hairstyle results and salon interior images, (2) a before/after comparison section, and (3) an Instagram-style layout option (e.g., square tiles and tight grid rhythm).",
-      "files": [
-        "frontend/src/components/media/BeforeAfterSlider.tsx",
-        "frontend/src/components/media/GalleryGrid.tsx",
-        "frontend/src/pages/GalleryPage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-6"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-build-the-about-us-page-including-story-of-baidees-salon-professional-stylists-introduction-hygiene-premium-product-assurance-and-a-why-choose-us-bullet-list",
-      "featureTitle": "Build the About Us page including: story of Baidees Salon, professional stylists introduction, hygiene & premium product assurance, and a “Why choose us” bullet list.",
-      "files": [
-        "frontend/src/components/sections/StylistsSection.tsx",
-        "frontend/src/pages/AboutPage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-7"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-build-the-contact-booking-page-including-an-online-appointment-booking-form-name-phone-service-date-time-a-whatsapp-booking-button-a-google-maps-location-placeholder-section-and-an-opening-hours-section",
-      "featureTitle": "Build the Contact & Booking page including: an online appointment booking form (name, phone, service, date, time), a WhatsApp booking button, a Google Maps location placeholder section, and an opening hours section.",
-      "files": [
-        "frontend/src/components/booking/BookingForm.tsx",
-        "frontend/src/hooks/useBookAppointment.ts",
-        "frontend/src/pages/ContactBookingPage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-8"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-smooth-scroll-animations-and-hover-effects-throughout-the-ui-e-g-section-reveal-card-hover-lift-button-hover-transitions-while-keeping-performance-acceptable-on-mobile-devices",
-      "featureTitle": "Add smooth scroll animations and hover effects throughout the UI (e.g., section reveal, card hover lift, button hover transitions) while keeping performance acceptable on mobile devices.",
-      "files": [
-        "frontend/src/hooks/useRevealOnScroll.ts",
-        "frontend/src/index.css",
-        "frontend/src/pages/GalleryPage.tsx",
-        "frontend/src/pages/HomePage.tsx",
-        "frontend/src/pages/ServicesPage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-10"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-an-offer-banner-feature-e-g-flat-20-off-on-keratin-treatment-displayed-prominently-at-least-on-home-page-and-optionally-site-wide",
-      "featureTitle": "Add an offer banner feature (e.g., “Flat 20% off on Keratin Treatment”) displayed prominently (at least on Home page, and optionally site-wide).",
-      "files": [
-        "frontend/src/components/marketing/OfferBanner.tsx",
-        "frontend/src/pages/HomePage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-11"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-a-membership-loyalty-card-section-describing-a-premium-membership-benefits-and-how-it-works-with-a-visually-distinct-card-style-layout-consistent-with-the-black-gold-white-theme",
-      "featureTitle": "Add a membership/loyalty card section describing a premium membership (benefits and how it works) with a visually distinct card-style layout consistent with the black/gold/white theme.",
-      "files": [
-        "frontend/src/components/marketing/MembershipCardSection.tsx",
-        "frontend/src/pages/HomePage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-12"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-an-faq-section-about-treatments-and-hair-care-with-at-least-6-q-a-items-using-an-accordion-interaction-pattern-suitable-for-mobile",
-      "featureTitle": "Add an FAQ section about treatments and hair care with at least 6 Q&A items, using an accordion interaction pattern suitable for mobile.",
-      "files": [
-        "frontend/src/components/sections/FaqAccordion.tsx",
-        "frontend/src/pages/ServicesPage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-13"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-create-a-site-wide-footer-with-social-media-links-placeholders-acceptable-contact-cues-and-consistent-branding-styling",
-      "featureTitle": "Create a site-wide footer with social media links (placeholders acceptable), contact cues, and consistent branding styling.",
-      "files": [
-        "frontend/src/components/layout/Footer.tsx",
-        "frontend/src/components/layout/SiteLayout.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-14"
-      ],
-      "confidence": "high"
-    },
-    {
-      "featureId": "feature-add-required-static-image-assets-for-the-hero-gallery-before-after-examples-and-stylist-imagery-and-render-them-from-frontend-static-assets-not-via-backend",
-      "featureTitle": "Add required static image assets for the hero, gallery, before/after examples, and stylist imagery, and render them from frontend static assets (not via backend).",
-      "files": [
-        "frontend/src/components/sections/StylistsSection.tsx",
-        "frontend/src/pages/GalleryPage.tsx",
-        "frontend/src/pages/HomePage.tsx"
-      ],
-      "components": [
-        "core-infrastructure@1.0.2",
-        "shadcn-ui@1.0.0",
-        "build-template-react@1.0.0",
-        "initial-app@1.0.0",
-        "github-export-icp-cli@1.0.0"
-      ],
-      "testIds": [
-        "REQ-15"
+        "REQ-17"
       ],
       "confidence": "high"
     }

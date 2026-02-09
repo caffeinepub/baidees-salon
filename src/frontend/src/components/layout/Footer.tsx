@@ -1,5 +1,6 @@
 import { SiFacebook, SiInstagram, SiX } from 'react-icons/si';
 import { Heart } from 'lucide-react';
+import BrandLogo from '@/components/branding/BrandLogo';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -13,7 +14,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand */}
           <div>
-            <h3 className="font-serif text-2xl font-bold text-gold mb-4">Baidees Salon</h3>
+            <BrandLogo variant="horizontal" size="md" className="mb-4" />
             <p className="text-sm text-muted-foreground mb-4">
               Where Style Meets Confidence
             </p>

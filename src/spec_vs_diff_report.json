@@ -1,72 +1,28 @@
 {
   "kind": "spec_vs_diff_report",
   "version": "1.0",
-  "generatedAt": "2026-02-09T21:28:02.068Z",
-  "summary": "Diff adds a multi-page React app scaffold with TanStack Router, a sticky navbar + footer, marketing sections (offer banner, membership, testimonials, FAQ), gallery grid and before/after slider, and a booking form wired to a Motoko backend method. Key gap: backend appointment storage is not in stable state, and backend includes unrequested “car wash” service catalog + extra query APIs.",
+  "generatedAt": "2026-02-09T22:20:38.573Z",
+  "summary": "REQ-16 appears implemented via centralized design tokens (CSS variables/Tailwind) by shifting the gold accent token to a brighter yellow and updating ring color. REQ-17 is largely implemented via a new BrandLogo component used in Navbar/Footer and favicon/OG links added to frontend/index.html, but the diff summary does not show the actual image assets being added.",
   "missing_requirements": [
     {
-      "id": "REQ-9",
-      "requirement": "Store appointment records in stable state for the canister lifetime and return a confirmation value (appointment id).",
-      "reason": "Backend stores appointments in an in-memory Map and nextId var without any stable variables or upgrade hooks shown; this will not persist across upgrades and may not meet the stable-state requirement.",
+      "id": "REQ-17",
+      "requirement": "Add the user-provided Baidees Salon logo as a static asset (square + horizontal) and generate/favicon/apple-touch/og images from it, loaded from frontend static assets.",
+      "reason": "Code references image paths under /assets/generated, and index.html links to favicon/apple-touch/og images, but the diff summary does not show any image/static asset files being added to the frontend. Without the actual assets present, the requirement is not fully verifiable from this diff.",
       "evidence": [
-        "backend/main.mo"
+        "frontend/src/components/branding/BrandLogo.tsx",
+        "frontend/index.html"
       ]
     }
   ],
-  "hallucinated_features": [
-    {
-      "description": "Backend includes an unrelated default services list (Standard Wash, Premium Wash, Interior Cleaning) that does not match salon services.",
-      "reason": "BuildRequest does not ask for a backend services catalog, and the included services are for vehicle washing rather than salon offerings.",
-      "evidence": [
-        "backend/main.mo"
-      ]
-    },
-    {
-      "description": "Backend exposes extra query endpoints getServices, getAppointment, and getAllAppointments.",
-      "reason": "REQ-9 only requires a create-appointment method callable from the frontend; additional listing/query APIs were not requested.",
-      "evidence": [
-        "backend/main.mo"
-      ]
-    },
-    {
-      "description": "Frontend includes next-themes ThemeProvider and a UI toast system (sonner) wired in App.",
-      "reason": "The BuildRequest does not request theme switching or toast infrastructure explicitly (though it may be used to show success states).",
-      "evidence": [
-        "frontend/src/App.tsx"
-      ]
-    }
-  ],
-  "confidence": 0.72,
+  "hallucinated_features": [],
+  "confidence": 0.7,
   "changed_files": [
-    "all_files_summary.json",
-    "backend/main.mo",
     "frontend-file-summaries.txt",
-    "frontend/index.css",
     "frontend/index.html",
-    "frontend/src/App.tsx",
-    "frontend/src/components/booking/BookingForm.tsx",
+    "frontend/src/components/branding/BrandLogo.tsx",
     "frontend/src/components/layout/Footer.tsx",
     "frontend/src/components/layout/Navbar.tsx",
-    "frontend/src/components/layout/SiteLayout.tsx",
-    "frontend/src/components/marketing/MembershipCardSection.tsx",
-    "frontend/src/components/marketing/OfferBanner.tsx",
-    "frontend/src/components/media/BeforeAfterSlider.tsx",
-    "frontend/src/components/media/GalleryGrid.tsx",
-    "frontend/src/components/sections/FaqAccordion.tsx",
-    "frontend/src/components/sections/ServiceHighlightsSection.tsx",
-    "frontend/src/components/sections/StylistsSection.tsx",
-    "frontend/src/components/sections/TestimonialsSection.tsx",
-    "frontend/src/hooks/useActor.ts",
-    "frontend/src/hooks/useBookAppointment.ts",
-    "frontend/src/hooks/useInternetIdentity.ts",
-    "frontend/src/hooks/useRevealOnScroll.ts",
     "frontend/src/index.css",
-    "frontend/src/main.tsx",
-    "frontend/src/pages/AboutPage.tsx",
-    "frontend/src/pages/ContactBookingPage.tsx",
-    "frontend/src/pages/GalleryPage.tsx",
-    "frontend/src/pages/HomePage.tsx",
-    "frontend/src/pages/ServicesPage.tsx",
     "frontend/tailwind.config.js",
     "project_state.json"
   ]

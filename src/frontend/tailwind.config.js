@@ -69,7 +69,7 @@ export default {
             },
             boxShadow: {
                 xs: '0 1px 2px 0 rgba(0,0,0,0.05)',
-                'gold-glow': '0 0 20px rgba(212, 175, 55, 0.3)',
+                'gold-glow': '0 0 20px rgba(255, 235, 59, 0.3)',
             },
             keyframes: {
                 'accordion-down': {

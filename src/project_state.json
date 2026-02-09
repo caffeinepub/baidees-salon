@@ -1,17 +1,19 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 3,
+  "projectStateVersion": 5,
   "summary": "Build a modern, premium, mobile-first website for the unisex salon brand “Baidees Salon” with luxury black/gold/white styling, multiple content pages (Home, Services, Gallery, About, Contact/Booking), and conversion-focused features like booking, CTAs, offers, membership, and FAQs.",
   "architectural_notes": [
     "Mobile-first, premium minimal aesthetic (luxurious but welcoming) using black/gold/white theme.",
     "Typography pairing: elegant serif for headings, modern sans-serif for body copy.",
     "UI styling: rounded cards, soft shadows, glassmorphism accents.",
     "UX: smooth scroll animations and hover effects; include sticky navigation and footer with social links.",
-    "Conversion elements: prominent Book Appointment / Call Now CTAs and WhatsApp booking option."
+    "Conversion elements: prominent Book Appointment / Call Now CTAs and WhatsApp booking option.",
+    "Update brand accent color to yellow (replace any orangish accents) consistently across UI components and highlights.",
+    "Use the provided logo consistently in key brand touchpoints (navbar, footer; consider favicon/metadata if available)."
   ],
   "known_issues": [],
   "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Luxurious modern salon interior hero background, warm lighting, minimal black-and-gold accents (baidees-hero-salon.dim_2400x1200.png)\n- Set of square hairstyle result photos with consistent premium color grading (baidees-gallery-hairstyles-1.dim_1200x1200.png)\n- Set of square salon interior photos with consistent premium color grading (baidees-gallery-interior-1.dim_1200x1200.png)\n- Before/after pair image for haircut transformation, consistent lighting and framing (baidees-before-after-haircut.dim_2000x1000.png)\n- Before/after pair image for keratin/smoothening transformation, consistent lighting and framing (baidees-before-after-keratin.dim_2000x1000.png)\n- Two professional stylist portrait photos, clean studio-like background, premium look (baidees-stylist-1.dim_800x1000.png)\n- Two professional stylist portrait photos, clean studio-like background, premium look (baidees-stylist-2.dim_800x1000.png)",
+  "imageRequirements": "## Required Images\n- Square transparent-background logo export (baidees-logo.dim_1024x1024.png)\n- Horizontal transparent-background logo export (baidees-logo-horizontal.dim_1600x600.png)\n- Favicon 32x32 (favicon.dim_32x32.png)\n- Favicon 180x180 (apple-touch-icon.dim_180x180.png)\n- Open Graph preview image (og-image.dim_1200x630.png)\n\n## Edit Images\n- Crop/clean and export logo variants (images.png > baidees-logo.dim_1024x1024.png)\n- Crop/clean and export horizontal logo variant (images.png > baidees-logo-horizontal.dim_1600x600.png)\n- Generate favicon from the logo (images.png > favicon.dim_32x32.png)\n- Generate Apple touch icon from the logo (images.png > apple-touch-icon.dim_180x180.png)\n- Generate OG image from the logo (images.png > og-image.dim_1200x630.png)",
   "existing_features": [
     {
       "id": "feature-create-a-mobile-first-multi-page-website-for-the-unisex-salon-brand-baidees-salon-with-these-routes-pages-home-services-gallery-about-us-and-contact-booking-ensure-navigation-allows-moving-between-all-pages",
@@ -124,6 +126,22 @@
         "REQ-15"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-update-the-global-accent-color-theme-from-the-current-orangish-gold-accent-to-a-cleaner-brighter-yellow-accent-across-the-entire-ui-while-keeping-the-premium-black-white-base-styling-this-must-apply-consistently-to-existing-accent-usage-e-g-text-gold-bg-gold-border-gold-focus-rings-hover-states-glows-badges-banners-ctas-on-all-pages-and-shared-components",
+      "title": "Update the global accent color theme from the current orangish/gold accent to a cleaner, brighter yellow accent across the entire UI while keeping the premium black/white base styling. This must apply consistently to existing accent usage (e.g., `text-gold`, `bg-gold`, `border-gold`, focus rings, hover states, glows, badges/banners, CTAs) on all pages and shared components.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-user-provided-baidees-salon-logo-as-a-static-asset-and-use-it-wherever-possible-across-the-site-at-minimum-in-the-navbar-brand-area-and-footer-brand-area-and-also-set-it-as-the-site-favicon-and-an-og-social-preview-image-if-present-used-ensure-sizing-works-on-mobile-and-desktop-and-preserves-the-luxury-styling-clean-spacing-no-pixelation",
+      "title": "Add the user-provided Baidees Salon logo as a static asset and use it wherever possible across the site: at minimum in the Navbar brand area and Footer brand area, and also set it as the site favicon (and an OG/social preview image if present/used). Ensure sizing works on mobile and desktop and preserves the luxury styling (clean spacing, no pixelation).",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -193,6 +211,18 @@
       "reqIds": [
         "REQ-9"
       ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-20",
+      "summary": "Update site theme accent from orangish to yellow across the design system (buttons, highlights, accents) while keeping the premium black/gold/white styling",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-21",
+      "summary": "Integrate and use the provided Baidees Salon logo consistently across the site (e.g., navbar, footer, favicon/OG where applicable)",
+      "reqIds": [],
       "status": "pending"
     }
   ],
